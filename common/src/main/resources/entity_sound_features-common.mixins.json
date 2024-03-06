@@ -1,0 +1,16 @@
+{
+  "required": true,
+  "minVersion": "0.8",
+  "package": "traben.entity_sound_features.mixin",
+  "compatibilityLevel": "JAVA_17",
+  "mixins": [
+  ],
+  "client": [
+    "MixinClientLevel",
+    "MixinSoundManager$Preparations",
+    "MixinWeighedSoundEvents"
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}

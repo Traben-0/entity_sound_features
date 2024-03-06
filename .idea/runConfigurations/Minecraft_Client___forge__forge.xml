@@ -1,0 +1,16 @@
+<component name="ProjectRunConfigurationManager">
+  <configuration default="false" factoryName="Application" name="Minecraft Client (:forge)" type="Application">
+    <option name="MAIN_CLASS_NAME" value="dev.architectury.transformer.TransformerRuntime"/>
+    <module name="entity_sound_features.forge.main"/>
+    <option name="PROGRAM_PARAMETERS" value=""/>
+    <option name="VM_PARAMETERS" value="-Dfabric.dli.config=C:\Users\bentr\IdeaProjects\entity_sound_features\forge\.gradle\loom-cache\launch.cfg -Dfabric.dli.env=client -Djava.net.preferIPv6Addresses=system -Dfabric.dli.main=net.minecraftforge.bootstrap.ForgeBootstrap -Darchitectury.main.class=C:\Users\bentr\IdeaProjects\entity_sound_features\forge\.gradle\architectury\.main_class -Darchitectury.runtime.transformer=C:\Users\bentr\IdeaProjects\entity_sound_features\forge\.gradle\architectury\.transforms -Darchitectury.properties=C:\Users\bentr\IdeaProjects\entity_sound_features\forge\.gradle\architectury\.properties -Djdk.attach.allowAttachSelf=true -javaagent:C:\Users\bentr\IdeaProjects\entity_sound_features\.gradle\architectury\architectury-transformer-agent.jar"/>
+    <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/forge/run/"/>
+    <method v="2">
+      <option enabled="true" name="Make"/>
+    </method>
+    <envs>
+      <env name="MCP_MAPPINGS" value="loom.stub"/>
+    </envs>
+    <shortenClasspath name="ARGS_FILE"/>
+  <classpathModifications/></configuration>
+</component>

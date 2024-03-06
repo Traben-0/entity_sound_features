@@ -1,0 +1,38 @@
+{
+  "schemaVersion": 1,
+  "id": "entity_sound_features",
+  "version": "${version}",
+  "name": "Entity Sound Features",
+  "description": "This is an expansion of the ETF mod, it adds support for ESF format resource packs.\nThe ESF format allows you to vary an entities sound with .properties files\njust like OptiFine/ETF random textures",
+  "authors": [
+    {
+      "name": "Traben",
+      "contact": {
+        "homepage": "https://www.curseforge.com/members/traben_0/projects",
+        "discord": "https://discord.gg/rURmwrzUcz"
+      }
+    }
+  ],
+  "contact": {
+    "homepage": "https://discord.gg/rURmwrzUcz",
+    "sources": "https://github.com/Traben-0/entity_sound_features",
+    "issues": "https://github.com/Traben-0/entity_sound_features/issues",
+    "discord": "https://discord.gg/rURmwrzUcz"
+  },
+  "license": "GNU LGPL 3.0",
+  "icon": "icon.png",
+  "environment": "client",
+  "entrypoints": {
+    "client": [
+      "traben.entity_sound_features.fabric.Entity_sound_featuresFabric"
+    ]
+  },
+  "mixins": [
+    "entity_sound_features.mixins.json",
+    "entity_sound_features-common.mixins.json"
+  ],
+  "depends": {
+    "fabricloader": ">=0.15.7",
+    "minecraft": "*"
+  }
+}
