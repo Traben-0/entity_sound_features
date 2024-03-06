@@ -9,6 +9,9 @@ loom {
         mixinConfig "entity_sound_features.mixins.json"
     }
 }
+
+archivesBaseName = rootProject.archives_base_name + "_forge_1.20.4"
+
 architectury {
     platformSetupLoomIde()
     forge()

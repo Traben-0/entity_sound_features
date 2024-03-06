@@ -25,9 +25,6 @@ public abstract class MixinClientLevel {
                                     final SoundSource soundSource, final float g, final float h, final boolean bl,
                                     final long l, final CallbackInfo ci) {
 
-        //ESFClient.log("Sound triggered for: " + soundEvent.getLocation());
-//        ESFSoundContext.soundSource = soundSource;
-
         for (Entity entity : getEntities().getAll()) {
             if (entity.getBoundingBox().contains(x, y, z)) {
                 //ESFClient.log("Sound called for: " + soundEvent.getLocation() + " for entity: " + entity.getType());
