@@ -66,5 +66,10 @@
       <option name="name" value="LoomLocalMinecraft" />
       <option name="url" value="file:/$PROJECT_DIR$/.gradle/loom-cache/minecraftMaven/" />
     </remote-repository>
+    <remote-repository>
+      <option name="id" value="maven3" />
+      <option name="name" value="maven3" />
+      <option name="url" value="https://mvnrepository.com/artifact/com.demonwav.mcdev/annotations" />
+    </remote-repository>
   </component>
 </project>

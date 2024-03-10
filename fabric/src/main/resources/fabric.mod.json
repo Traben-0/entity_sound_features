@@ -25,6 +25,9 @@
   "entrypoints": {
     "client": [
       "traben.entity_sound_features.fabric.Entity_sound_featuresFabric"
+    ],
+    "modmenu": [
+      "traben.entity_sound_features.fabric.ESFModMenuEntry"
     ]
   },
   "mixins": [
@@ -33,6 +36,15 @@
   ],
   "depends": {
     "fabricloader": ">=0.15.7",
-    "minecraft": "*"
+    "minecraft": "*",
+    "entity_texture_features": ">=5.3"
+  },
+  "custom": {
+    "modmenu": {
+      "links": {
+        "modmenu.website": "https://www.curseforge.com/members/traben_0/projects",
+        "modmenu.discord": "https://discord.gg/rURmwrzUcz"
+      }
+    }
   }
 }

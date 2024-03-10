@@ -4,9 +4,11 @@
   "package": "traben.entity_sound_features.mixin",
   "compatibilityLevel": "JAVA_17",
   "mixins": [
+    "MixinEntity"
   ],
   "client": [
     "MixinClientLevel",
+    "MixinResourceReload",
     "MixinSoundManager$Preparations",
     "MixinWeighedSoundEvents"
   ],

@@ -10,7 +10,8 @@ import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
-import traben.entity_sound_features.ESFClient;
+import traben.entity_sound_features.ESF;
+import traben.entity_sound_features.ESFConfig;
 import traben.entity_sound_features.ESFSoundContext;
 import traben.entity_sound_features.ESFVariantSupplier;
 
@@ -25,20 +26,24 @@ public abstract class MixinWeighedSoundEvents {
     @Inject(method = "<init>", at = @At(value = "TAIL"))
     private void esf$init(final ResourceLocation resourceLocation, final String string, final CallbackInfo ci) {
         esf$variator = ESFVariantSupplier.getOrNull(resourceLocation);
+        if(esf$variator != null) ESFSoundContext.registerVariantSupplier(esf$variator);
     }
 
 
     @Inject(method = "getSound(Lnet/minecraft/util/RandomSource;)Lnet/minecraft/client/resources/sounds/Sound;", at = @At(value = "RETURN"), cancellable = true)
     private void esf$soundModify(final RandomSource randomSource, final CallbackInfoReturnable<Sound> cir) {
         if (esf$variator != null) {
-            ESFClient.log("Sound called for: " + esf$variator);
-            if (ESFSoundContext.hasEntity())
-                ESFClient.log("sound entity is: " + ESFSoundContext.entitySource.etf$getType().toString());
+
+            boolean announce = ESF.config().getConfig().announceCompatibleSounds != ESFConfig.AnnounceMode.NONE;
+            if (announce) ESFSoundContext.announceSound(cir.getReturnValue().getLocation().toString(),true);
+
             Sound sound = esf$variator.getSoundVariantOrNull();
             if (sound != null) {
-                ESFClient.log("Sound returned: " + sound.getLocation());
+                if(announce) ESF.log("Sound modified to: " + sound.getLocation());
                 cir.setReturnValue(sound);
             }
+        }else if (ESF.config().getConfig().announceCompatibleSounds != ESFConfig.AnnounceMode.NONE) {
+            ESFSoundContext.announceSound(cir.getReturnValue().getLocation().toString(),false);
         }
     }
 

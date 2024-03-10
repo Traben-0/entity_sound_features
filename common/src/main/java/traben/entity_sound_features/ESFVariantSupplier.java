@@ -7,6 +7,7 @@ import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.packs.resources.Resource;
 import org.jetbrains.annotations.Nullable;
 import traben.entity_texture_features.ETFApi;
+import traben.entity_texture_features.utils.ETFEntity;
 
 import java.util.Objects;
 import java.util.Optional;
@@ -14,6 +15,11 @@ import java.util.Optional;
 public class ESFVariantSupplier {
 
     protected Int2ObjectArrayMap<Sound> variantSounds;
+
+    public void preTestEntity(ETFEntity entity) {
+        variator.getSuffixForETFEntity(entity);
+    }
+
     protected ETFApi.ETFVariantSuffixProvider variator;
     protected ResourceLocation location;
 
@@ -28,7 +34,7 @@ public class ESFVariantSupplier {
 
     @Nullable
     public static ESFVariantSupplier getOrNull(final ResourceLocation soundEventResource) {
-
+        boolean log = ESF.config().getConfig().logSoundSetup;
         try {
             String propertiesPath = soundEventResource.getNamespace() + ":esf/" + soundEventResource.getPath().replaceAll("\\.", "/") + ".properties";
             if (ResourceLocation.isValidResourceLocation(propertiesPath)) {
@@ -36,8 +42,8 @@ public class ESFVariantSupplier {
                 var variator = ETFApi.getVariantSupplierOrNull(properties,
                         new ResourceLocation(propertiesPath.replaceAll("\\.properties$",".ogg")), "sounds");
                 if (variator != null) {
-                    ESFClient.log(propertiesPath + " variator found for: " + soundEventResource);
-                    ESFClient.log("suffixes: " + variator.getAllSuffixes());
+                    if (log) ESF.log(propertiesPath + " ESF sound properties found for: " + soundEventResource);
+                    if (log) ESF.log("suffixes: " + variator.getAllSuffixes());
                     var suffixes = variator.getAllSuffixes();
                     suffixes.removeIf((k) -> k == 1);
                     suffixes.removeIf((k) -> k == 0);
@@ -49,10 +55,10 @@ public class ESFVariantSupplier {
                             var soundLocation = new ResourceLocation(soundPrefix + suffix + ".ogg");
                             Optional<Resource> soundResource = Minecraft.getInstance().getResourceManager().getResource(soundLocation);
                             if (soundResource.isPresent()) {
-                                ESFClient.log(propertiesPath + " has variant: " + soundLocation);
+                                if (log) ESF.log(propertiesPath + " added variant: " + soundLocation);
                                 variantSounds.put(suffix, new ESFSound(soundLocation));
                             } else {
-                                ESFClient.log(propertiesPath + " invalid variant: " + soundLocation);
+                                if (log) ESF.log(propertiesPath + " invalid variant: " + soundLocation);
                             }
                         }
                         if (!variantSounds.isEmpty())
@@ -60,10 +66,10 @@ public class ESFVariantSupplier {
                     }
                 }
             } else {
-                ESFClient.logWarn(propertiesPath + " was invalid sound properties id");
+                ESF.logWarn(propertiesPath + " was invalid sound properties id");
             }
         } catch (Exception e) {
-            ESFClient.logError(e.getMessage());
+            ESF.logError(e.getMessage());
         }
         return null;
     }
@@ -71,9 +77,7 @@ public class ESFVariantSupplier {
     public Sound getSoundVariantOrNull() {
         int vary = variator.getSuffixForETFEntity(ESFSoundContext.entitySource);
         if (vary > 0 && variantSounds.containsKey(vary)) {
-            Sound sound = variantSounds.get(vary);
-            ESFClient.log("sound returned: #" + vary + ", " + sound.getLocation());
-            return sound;
+            return variantSounds.get(vary);
         }
         return null;
     }

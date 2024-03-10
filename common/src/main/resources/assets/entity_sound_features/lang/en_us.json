@@ -1,0 +1,8 @@
+{
+  "entity_sound_features.config.pre_check": "Pre check all entity sounds",
+  "entity_sound_features.config.pre_check.tooltip": "If enabled ESF will cache all entity initial spawn conditions for all possible sounds when they first loaded.\nIf disabled ESF will cache the entities spawn conditions, per sound, only as the entities conditions are when that sound is first played.\n",
+  "entity_sound_features.config.log_setup": "",
+  "entity_sound_features.config.log_setup.tooltip": "",
+  "entity_sound_features.config.announce": "",
+  "entity_sound_features.config.announce.tooltip": ""
+}
