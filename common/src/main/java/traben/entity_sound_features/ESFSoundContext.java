@@ -24,7 +24,7 @@ public class ESFSoundContext {
     }
 
     public static void announceSound(ResourceLocation sound, boolean wasESF){
-        if (entitySource == null) return;
+        if (entitySource == null || sound == null) return;
 
         switch (ESF.config().getConfig().announceCompatibleSounds){
             case ESF ->{
