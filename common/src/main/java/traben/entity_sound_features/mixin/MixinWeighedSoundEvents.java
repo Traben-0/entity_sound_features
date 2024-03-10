@@ -22,9 +22,13 @@ public abstract class MixinWeighedSoundEvents {
     @Unique
     private ESFVariantSupplier esf$variator = null;
 
+    @Unique
+    private ResourceLocation esf$resourceLocation = null;
+
 
     @Inject(method = "<init>", at = @At(value = "TAIL"))
     private void esf$init(final ResourceLocation resourceLocation, final String string, final CallbackInfo ci) {
+        esf$resourceLocation = resourceLocation;
         esf$variator = ESFVariantSupplier.getOrNull(resourceLocation);
         if(esf$variator != null) ESFSoundContext.registerVariantSupplier(esf$variator);
     }
@@ -35,7 +39,7 @@ public abstract class MixinWeighedSoundEvents {
         if (esf$variator != null) {
 
             boolean announce = ESF.config().getConfig().announceCompatibleSounds != ESFConfig.AnnounceMode.NONE;
-            if (announce) ESFSoundContext.announceSound(cir.getReturnValue().getLocation().toString(),true);
+            if (announce) ESFSoundContext.announceSound(esf$resourceLocation,true);
 
             Sound sound = esf$variator.getSoundVariantOrNull();
             if (sound != null) {
@@ -43,7 +47,7 @@ public abstract class MixinWeighedSoundEvents {
                 cir.setReturnValue(sound);
             }
         }else if (ESF.config().getConfig().announceCompatibleSounds != ESFConfig.AnnounceMode.NONE) {
-            ESFSoundContext.announceSound(cir.getReturnValue().getLocation().toString(),false);
+            ESFSoundContext.announceSound(esf$resourceLocation,false);
         }
     }
 

@@ -1,6 +1,7 @@
 package traben.entity_sound_features;
 
 import com.demonwav.mcdev.annotations.Translatable;
+import net.minecraft.network.chat.CommonComponents;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
 import traben.entity_features.config.EFConfig;
@@ -37,10 +38,15 @@ public class ESFConfig extends EFConfig {
     }
 
     public enum AnnounceMode {
-        NONE("none"),
-        ESF("ESF"),
-        ALL("AL"),
-        ALL_ONCE("ALL_ONCE");
+        NONE(""){
+            @Override
+            public String toString() {
+                return CommonComponents.OPTION_OFF.getString();
+            }
+        },
+        ESF("entity_sound_features.config.announce.esf"),
+        ALL("entity_sound_features.config.announce.all"),
+        ALL_ONCE("entity_sound_features.config.announce.all_once");
         private final String key;
         AnnounceMode(@Translatable String key) {
             this.key = key;
