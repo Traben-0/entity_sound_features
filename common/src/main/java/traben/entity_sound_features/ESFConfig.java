@@ -17,16 +17,15 @@ public class ESFConfig extends EFConfig {
     public AnnounceMode announceCompatibleSounds = AnnounceMode.NONE;
 
 
-
     @Override
     public EFOptionCategory getGUIOptions() {
         return new EFOptionCategory.Empty().add(
                 new EFOptionCategory("config.entity_features.sounds_main").add(
-                        new EFOptionBoolean("entity_sound_features.config.pre_check","entity_sound_features.config.pre_check.tooltip",
+                        new EFOptionBoolean("entity_sound_features.config.pre_check", "entity_sound_features.config.pre_check.tooltip",
                                 () -> preCheckAllEntities, value -> preCheckAllEntities = value, true),
-                        new EFOptionBoolean("entity_sound_features.config.log_setup","entity_sound_features.config.log_setup.tooltip",
+                        new EFOptionBoolean("entity_sound_features.config.log_setup", "entity_sound_features.config.log_setup.tooltip",
                                 () -> logSoundSetup, value -> logSoundSetup = value, false),
-                        new EFOptionEnum<>("entity_sound_features.config.announce","entity_sound_features.config.announce.tooltip",
+                        new EFOptionEnum<>("entity_sound_features.config.announce", "entity_sound_features.config.announce.tooltip",
                                 () -> announceCompatibleSounds, value -> announceCompatibleSounds = value, AnnounceMode.NONE)
                 )
         );
@@ -38,7 +37,7 @@ public class ESFConfig extends EFConfig {
     }
 
     public enum AnnounceMode {
-        NONE(""){
+        NONE("") {
             @Override
             public String toString() {
                 return CommonComponents.OPTION_OFF.getString();
@@ -48,6 +47,7 @@ public class ESFConfig extends EFConfig {
         ALL("entity_sound_features.config.announce.all"),
         ALL_ONCE("entity_sound_features.config.announce.all_once");
         private final String key;
+
         AnnounceMode(@Translatable String key) {
             this.key = key;
         }

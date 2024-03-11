@@ -11,15 +11,12 @@ import traben.entity_texture_features.utils.ETFEntity;
 
 import java.util.Objects;
 import java.util.Optional;
+import java.util.Random;
 
 public class ESFVariantSupplier {
 
+    private static final Random random = new Random();
     protected Int2ObjectArrayMap<Sound> variantSounds;
-
-    public void preTestEntity(ETFEntity entity) {
-        variator.getSuffixForETFEntity(entity);
-    }
-
     protected ETFApi.ETFVariantSuffixProvider variator;
     protected ResourceLocation location;
 
@@ -30,6 +27,9 @@ public class ESFVariantSupplier {
         this.variantSounds = Objects.requireNonNull(variantSounds);
         this.variator = Objects.requireNonNull(variator);
         this.location = Objects.requireNonNull(location);
+        int max = variator.getAllSuffixes().size();
+        this.variator.setRandomSupplier((entity) ->
+                random.nextInt(max));
     }
 
     @Nullable
@@ -40,7 +40,7 @@ public class ESFVariantSupplier {
             if (ResourceLocation.isValidResourceLocation(propertiesPath)) {
                 ResourceLocation properties = new ResourceLocation(propertiesPath);
                 var variator = ETFApi.getVariantSupplierOrNull(properties,
-                        new ResourceLocation(propertiesPath.replaceAll("\\.properties$",".ogg")), "sounds");
+                        new ResourceLocation(propertiesPath.replaceAll("\\.properties$", ".ogg")), "sounds", "sound");
                 if (variator != null) {
                     if (log) ESF.log(propertiesPath + " ESF sound properties found for: " + soundEventResource);
                     if (log) ESF.log("suffixes: " + variator.getAllSuffixes());
@@ -72,6 +72,10 @@ public class ESFVariantSupplier {
             ESF.logError(e.getMessage());
         }
         return null;
+    }
+
+    public void preTestEntity(ETFEntity entity) {
+        variator.getSuffixForETFEntity(entity);
     }
 
     public Sound getSoundVariantOrNull() {

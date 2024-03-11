@@ -60,6 +60,9 @@ Suffixes are declared in the `.properties` file by the id `sounds` as opposed to
 
 ESF will calculate the sound to use each time it is called, so there is no need for a `update frquency` setting.
 
-It will still remember the entities spawn conditions for the relevant properties.
+It will still remember the entities initial conditions for the relevant properties.
+
+If a .properties case declares more than 1 suffix `e.g. sounds.1=2 3 4 5` then it will pick a random suffix **every** time
+unlike ETF which will return the same one each time consistently for that entity, this allows mimicking the sound variation present in vanilla.
 
 

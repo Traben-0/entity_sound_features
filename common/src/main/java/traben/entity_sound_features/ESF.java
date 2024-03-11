@@ -1,6 +1,5 @@
 package traben.entity_sound_features;
 
-import com.mojang.authlib.minecraft.client.MinecraftClient;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.screens.Screen;
 import org.slf4j.Logger;
@@ -17,7 +16,7 @@ public class ESF {
 
     public static EFConfigHandler<ESFConfig> config() {
         if (configHandler == null) {
-            configHandler = new EFConfigHandler<>( ESFConfig::new, MOD_ID,"ESF");
+            configHandler = new EFConfigHandler<>(ESFConfig::new, MOD_ID, "ESF");
         }
         return configHandler;
     }

@@ -10,10 +10,11 @@ import java.util.List;
 public class ESFSoundContext {
 
     private static final List<ESFVariantSupplier> variantSuppliers = new ArrayList<>();
-
+    private static final ObjectOpenHashSet<ResourceLocation> announcedSounds = new ObjectOpenHashSet<>();
+    public static ETFEntity entitySource = null;
 
     public static void registerVariantSupplier(ESFVariantSupplier supplier) {
-        if(ESF.config().getConfig().preCheckAllEntities)
+        if (ESF.config().getConfig().preCheckAllEntities)
             variantSuppliers.add(supplier);
     }
 
@@ -23,16 +24,16 @@ public class ESFSoundContext {
         }
     }
 
-    public static void announceSound(ResourceLocation sound, boolean wasESF){
+    public static void announceSound(ResourceLocation sound, boolean wasESF) {
         if (entitySource == null || sound == null) return;
 
-        switch (ESF.config().getConfig().announceCompatibleSounds){
-            case ESF ->{
-                if(wasESF) announceWithEntity(sound, true);
+        switch (ESF.config().getConfig().announceCompatibleSounds) {
+            case ESF -> {
+                if (wasESF) announceWithEntity(sound, true);
             }
             case ALL -> announceWithEntity(sound, wasESF);
-            case ALL_ONCE ->{
-                if(!announcedSounds.contains(sound)){
+            case ALL_ONCE -> {
+                if (!announcedSounds.contains(sound)) {
                     announceWithEntity(sound, wasESF);
                     announcedSounds.add(sound);
                 }
@@ -40,25 +41,21 @@ public class ESFSoundContext {
         }
     }
 
-    private static void announceWithEntity(ResourceLocation sound, boolean wasESF){
+    private static void announceWithEntity(ResourceLocation sound, boolean wasESF) {
         String pre;
-        if (wasESF) pre=("Modifiable sound event with ESF properties: " + sound);
-        else pre=("Modifiable sound event: " + sound);
-        ESF.log(pre+", played by: " + entitySource.etf$getType());
+        if (wasESF) pre = ("Modifiable sound event with ESF properties: " + sound);
+        else pre = ("Modifiable sound event: " + sound);
+        ESF.log(pre + ", played by: " + entitySource.etf$getType());
 
         if (!wasESF)
-            ESF.log("This sound event can be modified by ESF with a properties file at: assets/"+ sound.getNamespace() + "/esf/" + sound.getPath().replaceAll("\\.", "/") + ".properties");
+            ESF.log("This sound event can be modified by ESF with a properties file at: assets/" + sound.getNamespace() + "/esf/" + sound.getPath().replaceAll("\\.", "/") + ".properties");
     }
-
-    private static final ObjectOpenHashSet<ResourceLocation> announcedSounds = new ObjectOpenHashSet<>();
 
     public static void resetContext() {
         ESF.log("Resetting sound context");
         variantSuppliers.clear();
         announcedSounds.clear();
     }
-
-    public static ETFEntity entitySource = null;
 
 
 }
