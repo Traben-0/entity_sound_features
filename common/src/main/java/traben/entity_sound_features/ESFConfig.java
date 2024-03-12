@@ -16,6 +16,10 @@ public class ESFConfig extends EFConfig {
 
     public AnnounceMode announceCompatibleSounds = AnnounceMode.NONE;
 
+    public RandomSuffixBehaviour randomSuffixBehaviour = RandomSuffixBehaviour.RANDOM;
+
+
+
 
     @Override
     public EFOptionCategory getGUIOptions() {
@@ -26,7 +30,9 @@ public class ESFConfig extends EFConfig {
                         new EFOptionBoolean("entity_sound_features.config.log_setup", "entity_sound_features.config.log_setup.tooltip",
                                 () -> logSoundSetup, value -> logSoundSetup = value, false),
                         new EFOptionEnum<>("entity_sound_features.config.announce", "entity_sound_features.config.announce.tooltip",
-                                () -> announceCompatibleSounds, value -> announceCompatibleSounds = value, AnnounceMode.NONE)
+                                () -> announceCompatibleSounds, value -> announceCompatibleSounds = value, AnnounceMode.NONE),
+                        new EFOptionEnum<>("entity_sound_features.config.suffix_behaviour", "entity_sound_features.config.suffix_behaviour.tooltip",
+                                () -> randomSuffixBehaviour, value -> randomSuffixBehaviour = value, RandomSuffixBehaviour.RANDOM)
                 )
         );
     }
@@ -51,6 +57,27 @@ public class ESFConfig extends EFConfig {
         AnnounceMode(@Translatable String key) {
             this.key = key;
         }
+
+        @Override
+        public String toString() {
+            return Component.translatable(key).getString();
+        }
+    }
+
+    public enum RandomSuffixBehaviour {
+
+        RANDOM("entity_sound_features.config.suffix_behaviour.random"),
+        CONSISTENT("entity_sound_features.config.suffix_behaviour.consistent"),
+        FIRST("entity_sound_features.config.suffix_behaviour.first"),
+        SEQUENTIAL("entity_sound_features.config.suffix_behaviour.sequential"),
+        SEQUENTIAL_ENTITY("entity_sound_features.config.suffix_behaviour.sequential_entity");
+        private final String key;
+
+        RandomSuffixBehaviour(@Translatable String key) {
+            this.key = key;
+        }
+
+
 
         @Override
         public String toString() {

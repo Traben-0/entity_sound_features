@@ -7,5 +7,12 @@
   "entity_sound_features.config.announce.tooltip": "Allows ESF compatible sounds to be announced to the log.\nHelps to discover possible sounds to modify.",
   "entity_sound_features.config.announce.esf": "With .properties",
   "entity_sound_features.config.announce.all": "All",
-  "entity_sound_features.config.announce.all_once": "All once"
+  "entity_sound_features.config.announce.all_once": "All once",
+  "entity_sound_features.config.suffix_behaviour": "Suffix choice behaviour",
+  "entity_sound_features.config.suffix_behaviour.tooltip": "Sets which method to use when choosing between multiple different suffixes supplied by the same property\nE.G. sounds.1=1 2 3\nRandom = randomly pick every time from the whole set\nConsistent = will pick the same suffix every time for the same entity (same as ETF textures)\nFirst = will always pick the first suffix\nSequential = will cycle through the suffixes in order each time the sound plays",
+  "entity_sound_features.config.suffix_behaviour.random": "Random",
+  "entity_sound_features.config.suffix_behaviour.consistent": "Consistent",
+  "entity_sound_features.config.suffix_behaviour.first": "First",
+  "entity_sound_features.config.suffix_behaviour.sequential": "Sequential All",
+  "entity_sound_features.config.suffix_behaviour.sequential_entity": "Sequential per Entity"
 }

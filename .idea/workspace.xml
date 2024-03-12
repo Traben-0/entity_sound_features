@@ -4,8 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="12ca725e-80cd-4572-8c5f-3cca2a538ea1" name="Changes" comment="translations">
+    <list default="true" id="12ca725e-80cd-4572-8c5f-3cca2a538ea1" name="Changes" comment="randomized sound suffix return within case">
+      <change beforePath="$PROJECT_DIR$/.idea/modules/common/entity_sound_features.common.main.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules/common/entity_sound_features.common.main.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules/common/entity_sound_features.common.test.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules/common/entity_sound_features.common.test.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/src/main/java/traben/entity_sound_features/ESFConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/common/src/main/java/traben/entity_sound_features/ESFConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/src/main/java/traben/entity_sound_features/ESFVariantSupplier.java" beforeDir="false" afterPath="$PROJECT_DIR$/common/src/main/java/traben/entity_sound_features/ESFVariantSupplier.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/src/main/resources/assets/entity_sound_features/lang/en_us.json" beforeDir="false" afterPath="$PROJECT_DIR$/common/src/main/resources/assets/entity_sound_features/lang/en_us.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -57,6 +62,9 @@
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="DEPENDENCY_CHECKER_PROBLEMS_TAB" />
+  </component>
   <component name="ProjectColorInfo">{
   &quot;customColor&quot;: &quot;&quot;,
   &quot;associatedIndex&quot;: 0
@@ -83,6 +91,7 @@
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
     &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
     &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;run.code.analysis.last.selected.profile&quot;: &quot;pProject Default&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
 }</component>
@@ -145,7 +154,10 @@
       <workItem from="1709797195534" duration="46000" />
       <workItem from="1710051932549" duration="10006000" />
       <workItem from="1710132412933" duration="68000" />
-      <workItem from="1710133673569" duration="23000" />
+      <workItem from="1710133673569" duration="916000" />
+      <workItem from="1710143497951" duration="1443000" />
+      <workItem from="1710151386744" duration="254000" />
+      <workItem from="1710206237057" duration="2811000" />
     </task>
     <task id="LOCAL-00001" summary="build stuff">
       <option name="closed" value="true" />
@@ -179,7 +191,15 @@
       <option name="project" value="LOCAL" />
       <updated>1710061710210</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="randomized sound suffix return within case">
+      <option name="closed" value="true" />
+      <created>1710134526454</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1710134526454</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -189,6 +209,7 @@
     <MESSAGE value="build stuff" />
     <MESSAGE value="config" />
     <MESSAGE value="translations" />
-    <option name="LAST_COMMIT_MESSAGE" value="translations" />
+    <MESSAGE value="randomized sound suffix return within case" />
+    <option name="LAST_COMMIT_MESSAGE" value="randomized sound suffix return within case" />
   </component>
 </project>
