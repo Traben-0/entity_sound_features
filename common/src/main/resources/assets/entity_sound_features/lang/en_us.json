@@ -1,6 +1,6 @@
 {
   "entity_sound_features.config.pre_check": "Pre check all entity sounds",
-  "entity_sound_features.config.pre_check.tooltip": "If enabled ESF will cache all entity initial spawn conditions for all possible sounds when they first loaded.\nIf disabled ESF will cache the entities spawn conditions, per sound, only as the entities conditions are when that sound is first played.\n",
+  "entity_sound_features.config.pre_check.tooltip": "If enabled ESF will cache all entity initial spawn conditions for all possible sounds when they first loaded.\nIf disabled ESF will cache the entities spawn conditions, per sound, only as the entities conditions are when that sound is first played.",
   "entity_sound_features.config.log_setup": "Log sound setup",
   "entity_sound_features.config.log_setup.tooltip": "Will log the setup info of all sound .properties.",
   "entity_sound_features.config.announce": "Announce sounds",
@@ -14,5 +14,13 @@
   "entity_sound_features.config.suffix_behaviour.consistent": "Consistent",
   "entity_sound_features.config.suffix_behaviour.first": "First",
   "entity_sound_features.config.suffix_behaviour.sequential": "Sequential All",
-  "entity_sound_features.config.suffix_behaviour.sequential_entity": "Sequential per Entity"
+  "entity_sound_features.config.suffix_behaviour.sequential_entity": "Sequential per Entity",
+  "entity_sound_features.config.allow_entity": "Allow sound variation",
+  "entity_sound_features.config.allow_entity.tooltip": "Sets whether or not ESF will allow sounds to be varied for this entity.\nIf disabled ESF will only play the default sounds for this entity type.",
+  "entity_sound_features.config.entity_search.exact": "Exact",
+  "entity_sound_features.config.entity_search.block": "1 Block",
+  "entity_sound_features.config.entity_search.nearest": "Nearest",
+  "entity_sound_features.config.entity_search.client": "Client player",
+  "entity_sound_features.config.entity_search": "Sound source search mode",
+  "entity_sound_features.config.entity_search.tooltip": "ESF must search for the source entity near to where the sound is played.\nThis setting determines how ESF will search for the sound source entity.\nExact means the sound x,y,z must exactly match the entity\n1 Block means ESF will search a radius of 1 block from where the sound played.\nNearest will simply find the nearest entity, over any distance, this is really not recommended at all.\nClient player will always use the client player as the sound source.\nBlock entities will only check the exact block the sound is played from."
 }

@@ -7,6 +7,7 @@ import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.packs.resources.Resource;
 import org.jetbrains.annotations.Nullable;
 import traben.entity_texture_features.ETFApi;
+import traben.entity_texture_features.features.property_reading.PropertiesRandomProvider;
 import traben.entity_texture_features.utils.ETFEntity;
 import traben.entity_texture_features.utils.EntityIntLRU;
 
@@ -31,6 +32,12 @@ public class ESFVariantSupplier {
         this.location = Objects.requireNonNull(location);
         int max = variator.getAllSuffixes().size();
         this.variator.setRandomSupplier(getRandomSupplier(max));
+        if(variator instanceof PropertiesRandomProvider propeties){
+            propeties.setOnMeetsRuleHook((entity,rule)->{
+                System.out.println("sound meets rule: "+rule);
+            });
+        }
+        ESFSoundContext.addKnownESFSound(location);
     }
 
     private ETFApi.ETFVariantSuffixProvider.EntityRandomSeedFunction getRandomSupplier(int max){

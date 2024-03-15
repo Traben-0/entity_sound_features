@@ -4,19 +4,20 @@ import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.screens.Screen;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import traben.entity_features.config.EFConfigHandler;
-import traben.entity_features.config.gui.EFConfigScreenMain;
+import traben.entity_texture_features.ETF;
+import traben.tconfig.TConfigHandler;
 
 public class ESF {
     public static final String MOD_ID = "entity_sound_features";
 
     private static final Logger LOGGER = LoggerFactory.getLogger(MOD_ID);
 
-    private static EFConfigHandler<ESFConfig> configHandler = null;
+    private static TConfigHandler<ESFConfig> configHandler = null;
 
-    public static EFConfigHandler<ESFConfig> config() {
+    public static TConfigHandler<ESFConfig> config() {
         if (configHandler == null) {
-            configHandler = new EFConfigHandler<>(ESFConfig::new, MOD_ID, "ESF");
+            configHandler = new TConfigHandler<>(ESFConfig::new, MOD_ID, "ESF");
+            ETF.registerConfigHandler(configHandler);
         }
         return configHandler;
     }
@@ -35,7 +36,7 @@ public class ESF {
 
     //forge config screen factory
     public static Screen getConfigScreen(Minecraft ignored, Screen parent) {
-        return new EFConfigScreenMain(parent);
+        return ETF.getConfigScreen(parent);
     }
 
     //method to log info

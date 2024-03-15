@@ -6,5 +6,7 @@ accessible method net/minecraft/client/sounds/SoundManager prepare (Lnet/minecra
 accessible class net/minecraft/client/sounds/SoundManager$Preparations
 accessible field net/minecraft/client/sounds/SoundManager$Preparations soundCache Ljava/util/Map;
 
+accessible field net/minecraft/client/renderer/blockentity/BlockEntityRenderers PROVIDERS Ljava/util/Map;
+
 
 

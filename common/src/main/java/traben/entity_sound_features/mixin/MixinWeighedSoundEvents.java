@@ -45,6 +45,8 @@ public abstract class MixinWeighedSoundEvents {
             if (sound != null) {
                 if (announce) ESF.log("Sound modified to: " + sound.getLocation());
                 cir.setReturnValue(sound);
+            }else{
+                if (announce) ESF.log("Sound not modified: " + cir.getReturnValue().getLocation());
             }
         } else if (ESF.config().getConfig().announceCompatibleSounds != ESFConfig.AnnounceMode.NONE) {
             ESFSoundContext.announceSound(esf$resourceLocation, false);
