@@ -5,16 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="12ca725e-80cd-4572-8c5f-3cca2a538ea1" name="Changes" comment="ETF config changes">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/src/main/java/traben/entity_sound_features/ESF.java" beforeDir="false" afterPath="$PROJECT_DIR$/common/src/main/java/traben/entity_sound_features/ESF.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/src/main/java/traben/entity_sound_features/ESFConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/common/src/main/java/traben/entity_sound_features/ESFConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/src/main/java/traben/entity_sound_features/ESFSoundContext.java" beforeDir="false" afterPath="$PROJECT_DIR$/common/src/main/java/traben/entity_sound_features/ESFSoundContext.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/common/src/main/java/traben/entity_sound_features/ESFVariantSupplier.java" beforeDir="false" afterPath="$PROJECT_DIR$/common/src/main/java/traben/entity_sound_features/ESFVariantSupplier.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/src/main/java/traben/entity_sound_features/mixin/MixinClientLevel.java" beforeDir="false" afterPath="$PROJECT_DIR$/common/src/main/java/traben/entity_sound_features/mixin/MixinClientLevel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/src/main/java/traben/entity_sound_features/mixin/MixinWeighedSoundEvents.java" beforeDir="false" afterPath="$PROJECT_DIR$/common/src/main/java/traben/entity_sound_features/mixin/MixinWeighedSoundEvents.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/src/main/resources/assets/entity_sound_features/lang/en_us.json" beforeDir="false" afterPath="$PROJECT_DIR$/common/src/main/resources/assets/entity_sound_features/lang/en_us.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/src/main/resources/entity_sound_features.accesswidener" beforeDir="false" afterPath="$PROJECT_DIR$/common/src/main/resources/entity_sound_features.accesswidener" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/forge/src/main/resources/META-INF/mods.toml" beforeDir="false" afterPath="$PROJECT_DIR$/forge/src/main/resources/META-INF/mods.toml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -161,7 +152,7 @@
       <workItem from="1710216420046" duration="2487000" />
       <workItem from="1710240850015" duration="10000" />
       <workItem from="1710521506869" duration="4592000" />
-      <workItem from="1710526125458" duration="726000" />
+      <workItem from="1710526125458" duration="793000" />
     </task>
     <task id="LOCAL-00001" summary="build stuff">
       <option name="closed" value="true" />
@@ -211,7 +202,15 @@
       <option name="project" value="LOCAL" />
       <updated>1710212405845</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="ETF config changes">
+      <option name="closed" value="true" />
+      <created>1710526915482</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1710526915482</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
