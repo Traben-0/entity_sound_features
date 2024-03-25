@@ -8,6 +8,7 @@ import net.minecraft.world.entity.Entity;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.phys.Vec3;
 import traben.entity_texture_features.utils.ETFEntity;
+import traben.entity_texture_features.utils.EntityIntLRU;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -68,7 +69,12 @@ public class ESFSoundContext {
         ESF.log("Resetting sound context");
         variantSuppliers.clear();
         announcedSounds.clear();
+        lastRuleMet.clear();
+        lastSuffix.clear();
     }
+
+    public static final EntityIntLRU lastRuleMet = new EntityIntLRU();
+    public static final EntityIntLRU lastSuffix = new EntityIntLRU();
 
 
     public static void searchForEntity(Iterable<Entity> entities, double x, double y, double z) {

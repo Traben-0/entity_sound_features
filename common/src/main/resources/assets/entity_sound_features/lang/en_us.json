@@ -22,5 +22,7 @@
   "entity_sound_features.config.entity_search.nearest": "Nearest",
   "entity_sound_features.config.entity_search.client": "Client player",
   "entity_sound_features.config.entity_search": "Sound source search mode",
+  "entity_sound_features.suffix_property": "Sound Suffix (Optional)\nmatches the last random sound suffix number that the entities sound was set to\ndefaults to 0\nExample: soundSuffix.1= 2 4 6\n§asoundSuffix.<n>=<list>",
+  "entity_sound_features.rule_property": "Sound Rule (Optional)\nmatches the last random sound rule number that the entities sound matched against\ndefaults to 0\nExample: soundRule.1= 2 4 6\n§asoundRule.<n>=<list>",
   "entity_sound_features.config.entity_search.tooltip": "ESF must search for the source entity near to where the sound is played.\nThis setting determines how ESF will search for the sound source entity.\nExact means the sound x,y,z must exactly match the entity\n1 Block means ESF will search a radius of 1 block from where the sound played.\nNearest will simply find the nearest entity, over any distance, this is really not recommended at all.\nClient player will always use the client player as the sound source.\nBlock entities will only check the exact block the sound is played from."
 }

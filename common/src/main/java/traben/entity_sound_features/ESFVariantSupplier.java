@@ -7,6 +7,7 @@ import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.packs.resources.Resource;
 import org.jetbrains.annotations.Nullable;
 import traben.entity_texture_features.ETFApi;
+import traben.entity_texture_features.features.property_reading.PropertiesRandomProvider;
 import traben.entity_texture_features.utils.ETFEntity;
 import traben.entity_texture_features.utils.EntityIntLRU;
 
@@ -31,11 +32,15 @@ public class ESFVariantSupplier {
         this.location = Objects.requireNonNull(location);
         int max = variator.getAllSuffixes().size();
         this.variator.setRandomSupplier(getRandomSupplier(max));
-//        if(variator instanceof PropertiesRandomProvider propeties){
-//            propeties.setOnMeetsRuleHook((entity,rule)->{
-//                System.out.println("sound meets rule: "+(rule==null? "null":rule.RULE_NUMBER));
-//            });
-//        }
+        if(variator instanceof PropertiesRandomProvider propeties){
+            propeties.setOnMeetsRuleHook((entity,rule)->{
+                if (rule == null){
+                    ESFSoundContext.lastRuleMet.removeInt(entity.etf$getUuid());
+                } else {
+                    ESFSoundContext.lastRuleMet.put(entity.etf$getUuid(), rule.RULE_NUMBER);
+                }
+            });
+        }
         ESFSoundContext.addKnownESFSound(location);
     }
 
@@ -116,6 +121,16 @@ public class ESFVariantSupplier {
 
     public Sound getSoundVariantOrNull() {
         int vary = variator.getSuffixForETFEntity(ESFSoundContext.entitySource);
+
+        //log entity suffix
+        if (ESFSoundContext.entitySource!=null){
+            if (vary > 0) {
+                ESFSoundContext.lastSuffix.put(ESFSoundContext.entitySource.etf$getUuid(), vary);
+            } else {
+                ESFSoundContext.lastSuffix.removeInt(ESFSoundContext.entitySource.etf$getUuid());
+            }
+        }
+
         if (vary > 0 && variantSounds.containsKey(vary)) {
             return variantSounds.get(vary);
         }

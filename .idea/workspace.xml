@@ -4,8 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="12ca725e-80cd-4572-8c5f-3cca2a538ea1" name="Changes" comment="ETF config changes">
+    <list default="true" id="12ca725e-80cd-4572-8c5f-3cca2a538ea1" name="Changes" comment="forge fix">
+      <change afterPath="$PROJECT_DIR$/common/src/main/java/traben/entity_sound_features/SoundRuleIndexProperty.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/common/src/main/java/traben/entity_sound_features/SoundSuffixProperty.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/common/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/src/main/java/traben/entity_sound_features/ESF.java" beforeDir="false" afterPath="$PROJECT_DIR$/common/src/main/java/traben/entity_sound_features/ESF.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/src/main/java/traben/entity_sound_features/ESFSoundContext.java" beforeDir="false" afterPath="$PROJECT_DIR$/common/src/main/java/traben/entity_sound_features/ESFSoundContext.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/common/src/main/java/traben/entity_sound_features/ESFVariantSupplier.java" beforeDir="false" afterPath="$PROJECT_DIR$/common/src/main/java/traben/entity_sound_features/ESFVariantSupplier.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/src/main/resources/assets/entity_sound_features/lang/en_us.json" beforeDir="false" afterPath="$PROJECT_DIR$/common/src/main/resources/assets/entity_sound_features/lang/en_us.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -31,7 +38,12 @@
         </task>
         <projects_view>
           <tree_state>
-            <expand />
+            <expand>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="entity_sound_features" type="f1a62948:ProjectNode" />
+              </path>
+            </expand>
             <select />
           </tree_state>
         </projects_view>
@@ -93,6 +105,7 @@
       <recent name="traben.entity_sound_features.mixin" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="traben.entity_sound_features" />
       <recent name="traben.entity_sound_features.forge.mixin" />
       <recent name="traben.entity_sound_features.mixin" />
     </key>
@@ -153,6 +166,11 @@
       <workItem from="1710240850015" duration="10000" />
       <workItem from="1710521506869" duration="4592000" />
       <workItem from="1710526125458" duration="793000" />
+      <workItem from="1711203649877" duration="1003000" />
+      <workItem from="1711267841493" duration="315000" />
+      <workItem from="1711338143959" duration="16000" />
+      <workItem from="1711342025602" duration="151000" />
+      <workItem from="1711349281804" duration="783000" />
     </task>
     <task id="LOCAL-00001" summary="build stuff">
       <option name="closed" value="true" />
@@ -210,7 +228,15 @@
       <option name="project" value="LOCAL" />
       <updated>1710526915482</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="forge fix">
+      <option name="closed" value="true" />
+      <created>1711204546799</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1711204546799</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -223,6 +249,7 @@
     <MESSAGE value="randomized sound suffix return within case" />
     <MESSAGE value="suffix behaviour setting" />
     <MESSAGE value="ETF config changes" />
-    <option name="LAST_COMMIT_MESSAGE" value="ETF config changes" />
+    <MESSAGE value="forge fix" />
+    <option name="LAST_COMMIT_MESSAGE" value="forge fix" />
   </component>
 </project>

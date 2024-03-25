@@ -5,6 +5,8 @@ import net.minecraft.client.gui.screens.Screen;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import traben.entity_texture_features.ETF;
+import traben.entity_texture_features.ETFApi;
+import traben.entity_texture_features.features.property_reading.properties.RandomProperties;
 import traben.tconfig.TConfigHandler;
 
 public class ESF {
@@ -26,6 +28,14 @@ public class ESF {
         LOGGER.info("[ESF (Entity Sound Features)] initialized.");
         config();
 
+        ETFApi.registerCustomRandomPropertyFactory(MOD_ID,
+                RandomProperties.RandomPropertyFactory.of("soundRule",
+                        "entity_sound_features.rule_property",
+                        SoundRuleIndexProperty::getPropertyOrNull),
+                RandomProperties.RandomPropertyFactory.of("soundSuffix",
+                        "entity_sound_features.suffix_property",
+                        SoundSuffixProperty::getPropertyOrNull)
+                );
 
     }
 
