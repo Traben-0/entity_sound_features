@@ -10,6 +10,17 @@ public class ESFSound extends Sound {
         super(soundLocation.toString(), ConstantFloat.of(1.0F), ConstantFloat.of(1.0F), 1, Type.FILE, false, false, 16);
     }
 
+    public ESFSound(final ResourceLocation soundLocation, Sound copyFrom) {
+        super(soundLocation.toString(),
+                copyFrom.getVolume(),
+                copyFrom.getPitch(),
+                copyFrom.getWeight(),
+                Type.FILE,
+                copyFrom.shouldStream(),
+                copyFrom.shouldPreload(),
+                copyFrom.getAttenuationDistance());
+    }
+
     @Override
     public @NotNull ResourceLocation getPath() {
         return getLocation();

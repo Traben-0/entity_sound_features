@@ -25,7 +25,6 @@ public class ESFConfig extends TConfig {
 
     public AnnounceMode announceCompatibleSounds = AnnounceMode.NONE;
 
-    public RandomSuffixBehaviour randomSuffixBehaviour = RandomSuffixBehaviour.RANDOM;
 
     public ObjectOpenHashSet<String> entityDisableSounds = new ObjectOpenHashSet<>();
 
@@ -48,9 +47,7 @@ public class ESFConfig extends TConfig {
                                 () -> logSoundSetup, value -> logSoundSetup = value, false),
                         new TConfigEntryEnumButton<>("entity_sound_features.config.announce", "entity_sound_features.config.announce.tooltip",
                                 () -> announceCompatibleSounds, value -> announceCompatibleSounds = value, AnnounceMode.NONE),
-                        new TConfigEntryEnumSlider<>("entity_sound_features.config.suffix_behaviour", "entity_sound_features.config.suffix_behaviour.tooltip",
-                                () -> randomSuffixBehaviour, value -> randomSuffixBehaviour = value, RandomSuffixBehaviour.RANDOM),
-                        new TConfigEntryEnumSlider<>("entity_sound_features.config.entity_search", "entity_sound_features.config.entity_search.tooltip",
+                       new TConfigEntryEnumSlider<>("entity_sound_features.config.entity_search", "entity_sound_features.config.entity_search.tooltip",
                                 () -> entitySearchMode, value -> entitySearchMode = value, EntitySearchMode.EXACT)
 
                 ),
@@ -125,27 +122,6 @@ public class ESFConfig extends TConfig {
         AnnounceMode(@Translatable String key) {
             this.key = key;
         }
-
-        @Override
-        public String toString() {
-            return Component.translatable(key).getString();
-        }
-    }
-
-    public enum RandomSuffixBehaviour {
-
-        RANDOM("entity_sound_features.config.suffix_behaviour.random"),
-        CONSISTENT("entity_sound_features.config.suffix_behaviour.consistent"),
-        FIRST("entity_sound_features.config.suffix_behaviour.first"),
-        SEQUENTIAL("entity_sound_features.config.suffix_behaviour.sequential"),
-        SEQUENTIAL_ENTITY("entity_sound_features.config.suffix_behaviour.sequential_entity");
-        private final String key;
-
-        RandomSuffixBehaviour(@Translatable String key) {
-            this.key = key;
-        }
-
-
 
         @Override
         public String toString() {
