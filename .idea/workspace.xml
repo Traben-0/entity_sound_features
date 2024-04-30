@@ -4,26 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="12ca725e-80cd-4572-8c5f-3cca2a538ea1" name="Changes" comment="neoforge">
-      <change afterPath="$PROJECT_DIR$/.idea/runConfigurations/Minecraft_Client___neoforge__neoforge.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/runConfigurations/Minecraft_Server___neoforge__neoforge.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/neoforge/build.gradle" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/neoforge/gradle.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/neoforge/src/main/java/traben/entity_sound_features/neoforge/Entity_sound_featuresNeoForge.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/neoforge/src/main/resources/META-INF/mods.toml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/neoforge/src/main/resources/entity_sound_features.mixins.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/neoforge/src/main/resources/icon.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/neoforge/src/main/resources/pack.mcmeta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/jarRepositories.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/jarRepositories.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/runConfigurations/Minecraft_Server___fabric__fabric.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/runConfigurations/Minecraft_Server___fabric__fabric.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/runConfigurations/Minecraft_Server___forge__forge.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/runConfigurations/Minecraft_Server___forge__forge.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gradle.properties" beforeDir="false" afterPath="$PROJECT_DIR$/gradle.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.properties" beforeDir="false" afterPath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/settings.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/settings.gradle" afterDir="false" />
+    <list default="true" id="12ca725e-80cd-4572-8c5f-3cca2a538ea1" name="Changes" comment="1.20.6">
+      <change beforePath="$PROJECT_DIR$/.idea/modules/forge/entity_sound_features.forge.main.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules/forge/entity_sound_features.forge.main.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules/forge/entity_sound_features.forge.test.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules/forge/entity_sound_features.forge.test.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/src/main/java/traben/entity_sound_features/ESFVariantSupplier.java" beforeDir="false" afterPath="$PROJECT_DIR$/common/src/main/java/traben/entity_sound_features/ESFVariantSupplier.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/src/main/resources/entity_sound_features.accesswidener" beforeDir="false" afterPath="$PROJECT_DIR$/common/src/main/resources/entity_sound_features.accesswidener" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -285,6 +270,17 @@
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="build stuff" />
     <MESSAGE value="config" />
@@ -297,6 +293,7 @@
     <MESSAGE value="allowed variants to be defined by sound2.json declarations instead of just sound2.ogg, these .json files follow the sounds.json format but for only 1 entry" />
     <MESSAGE value="gitignore" />
     <MESSAGE value="neoforge" />
-    <option name="LAST_COMMIT_MESSAGE" value="neoforge" />
+    <MESSAGE value="1.20.6" />
+    <option name="LAST_COMMIT_MESSAGE" value="1.20.6" />
   </component>
 </project>

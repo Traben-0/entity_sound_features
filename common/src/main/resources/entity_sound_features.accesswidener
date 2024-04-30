@@ -8,5 +8,5 @@ accessible field net/minecraft/client/sounds/SoundManager$Preparations soundCach
 
 accessible field net/minecraft/client/renderer/blockentity/BlockEntityRenderers PROVIDERS Ljava/util/Map;
 
-
+accessible field net/minecraft/client/sounds/SoundManager GSON Lcom/google/gson/Gson;
 

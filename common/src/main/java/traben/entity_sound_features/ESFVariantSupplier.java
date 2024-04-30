@@ -1,18 +1,14 @@
 package traben.entity_sound_features;
 
-import com.google.gson.Gson;
-import com.google.gson.GsonBuilder;
 import com.google.gson.reflect.TypeToken;
 import it.unimi.dsi.fastutil.ints.Int2ObjectArrayMap;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.resources.sounds.Sound;
 import net.minecraft.client.resources.sounds.SoundEventRegistration;
-import net.minecraft.client.resources.sounds.SoundEventRegistrationSerializer;
 import net.minecraft.client.sounds.SoundEngine;
 import net.minecraft.client.sounds.SoundManager;
 import net.minecraft.client.sounds.WeighedSoundEvents;
 import net.minecraft.client.sounds.Weighted;
-import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.packs.resources.Resource;
 import net.minecraft.util.GsonHelper;
@@ -31,7 +27,7 @@ public class ESFVariantSupplier {
 
     private static final TypeToken<SoundEventRegistration> SOUND_EVENT_REGISTRATION_TYPE = new TypeToken<>() {
     };
-    private static final Gson GSON = (new GsonBuilder()).registerTypeHierarchyAdapter(Component.class, new Component.SerializerAdapter()).registerTypeAdapter(SoundEventRegistration.class, new SoundEventRegistrationSerializer()).create();
+   // private static final Gson GSON = (new GsonBuilder()).registerTypeHierarchyAdapter(Component.class, new Component.SerializerAdapter()).registerTypeAdapter(SoundEventRegistration.class, new SoundEventRegistrationSerializer()).create();
     private final RandomSource random = RandomSource.create();
     //private static final Random random = new Random();
     protected Int2ObjectArrayMap<WeighedSoundEvents> variantSounds;
@@ -114,7 +110,7 @@ public class ESFVariantSupplier {
 
     private static void parseSoundEventVariant(ResourceLocation soundJson, Resource jsonResource, Int2ObjectArrayMap<WeighedSoundEvents> soundMap, int suffix) {
         try {
-            SoundEventRegistration map = GsonHelper.fromJson(GSON, jsonResource.openAsReader(), SOUND_EVENT_REGISTRATION_TYPE);
+            SoundEventRegistration map = GsonHelper.fromJson(SoundManager.GSON, jsonResource.openAsReader(), SOUND_EVENT_REGISTRATION_TYPE);
             var weighedSoundEvents = new WeighedSoundEvents(null, map.getSubtitle());
             for (Sound sound : map.getSounds()) {
                 final ResourceLocation resourceLocation2 = sound.getLocation();
