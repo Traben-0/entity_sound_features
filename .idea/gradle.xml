@@ -11,6 +11,7 @@
             <option value="$PROJECT_DIR$/common" />
             <option value="$PROJECT_DIR$/fabric" />
             <option value="$PROJECT_DIR$/forge" />
+            <option value="$PROJECT_DIR$/neoforge" />
           </set>
         </option>
       </GradleProjectSettings>
