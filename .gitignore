@@ -8,3 +8,6 @@
 /forge/.gradle/
 /forge/build/
 /.idea/copilot/
+/neoforge/build/
+/neoforge/.gradle/
+/.idea/
