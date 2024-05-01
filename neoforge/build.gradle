@@ -10,6 +10,7 @@ loom {
 //    }
 }
 
+//explicitly set the version name, neoforge is not multi version stable at this time
 archivesBaseName = rootProject.archives_base_name + "_neoforge_1.20.4"
 
 architectury {
