@@ -35,9 +35,9 @@
     "entity_sound_features-common.mixins.json"
   ],
   "depends": {
-    "fabricloader": ">=0.15.7",
-    "minecraft": "*",
-    "entity_texture_features": ">=5.3"
+    "fabricloader": "*",
+    "minecraft": ">=1.19.4",
+    "entity_texture_features": ">=6.0"
   },
   "custom": {
     "modmenu": {

@@ -30,7 +30,7 @@ public abstract class MixinWeighedSoundEvents {
     private void esf$init(final ResourceLocation resourceLocation, final String string, final CallbackInfo ci) {
         esf$resourceLocation = resourceLocation;
         esf$variator = ESFVariantSupplier.getOrNull(resourceLocation);
-        if (esf$variator != null) ESFSoundContext.registerVariantSupplier(esf$variator);
+//        if (esf$variator != null) ESFSoundContext.registerVariantSupplier(esf$variator);
     }
 
 

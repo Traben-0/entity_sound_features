@@ -27,10 +27,10 @@ public class ESFSoundContext {
     }
     public static ETFEntity entitySource = null;
 
-    public static void registerVariantSupplier(ESFVariantSupplier supplier) {
-        if (ESF.config().getConfig().preCheckAllEntities)
-            variantSuppliers.add(supplier);
-    }
+//    public static void registerVariantSupplier(ESFVariantSupplier supplier) {
+//        if (ESF.config().getConfig().preCheckAllEntities)
+//            variantSuppliers.add(supplier);
+//    }
 
     public static void preTestEntity(ETFEntity entity) {
         for (ESFVariantSupplier variantSupplier : variantSuppliers) {

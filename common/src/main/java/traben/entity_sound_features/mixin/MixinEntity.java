@@ -15,13 +15,13 @@ import traben.entity_texture_features.utils.ETFEntity;
 @Mixin(Entity.class)
 public abstract class MixinEntity {
 
-    @Inject(method = "<init>", at = @At("TAIL"))
-    private void emf$reloadStart(final EntityType<?> entityType, final Level level, final CallbackInfo ci) {
-        if (ESF.config().getConfig().preCheckAllEntities
-                && level.isClientSide()
-                && ((Entity) (Object) this) instanceof ETFEntity etf) {
-            ESFSoundContext.preTestEntity(etf);
-        }
-    }
+//    @Inject(method = "<init>", at = @At("TAIL"))
+//    private void emf$reloadStart(final EntityType<?> entityType, final Level level, final CallbackInfo ci) {
+//        if (ESF.config().getConfig().preCheckAllEntities
+//                && level.isClientSide()
+//                && ((Entity) (Object) this) instanceof ETFEntity etf) {
+//            ESFSoundContext.preTestEntity(etf);
+//        }
+//    }
 
 }

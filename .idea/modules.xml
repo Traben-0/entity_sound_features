@@ -11,6 +11,10 @@
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/forge/entity_sound_features.forge.test.iml" filepath="$PROJECT_DIR$/.idea/modules/forge/entity_sound_features.forge.test.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/neoforge/entity_sound_features.neoforge.main.iml" filepath="$PROJECT_DIR$/.idea/modules/neoforge/entity_sound_features.neoforge.main.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/neoforge/entity_sound_features.neoforge.test.iml" filepath="$PROJECT_DIR$/.idea/modules/neoforge/entity_sound_features.neoforge.test.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/forge/traben.entity_sound_features.forge.main.iml" filepath="$PROJECT_DIR$/.idea/modules/forge/traben.entity_sound_features.forge.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/forge/traben.entity_sound_features.forge.test.iml" filepath="$PROJECT_DIR$/.idea/modules/forge/traben.entity_sound_features.forge.test.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/neoforge/traben.entity_sound_features.neoforge.main.iml" filepath="$PROJECT_DIR$/.idea/modules/neoforge/traben.entity_sound_features.neoforge.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/neoforge/traben.entity_sound_features.neoforge.test.iml" filepath="$PROJECT_DIR$/.idea/modules/neoforge/traben.entity_sound_features.neoforge.test.iml" />
     </modules>
   </component>
 </project>

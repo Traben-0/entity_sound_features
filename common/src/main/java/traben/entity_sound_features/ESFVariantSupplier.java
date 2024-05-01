@@ -44,11 +44,14 @@ public class ESFVariantSupplier {
 
 //        this.variator.setRandomSupplier((entity) -> entity.etf$getUuid().hashCode());
 
+
         if (variator instanceof PropertiesRandomProvider propeties) {
             propeties.setOnMeetsRuleHook((entity, rule) -> {
                 if (rule == null) {
+//                    System.out.println("Rule met: null for " + entity.etf$getType() + ": " + entity.etf$getUuid());
                     ESFSoundContext.lastRuleMet.removeInt(entity.etf$getUuid());
                 } else {
+//                    System.out.println("Rule met: " + rule.RULE_NUMBER + " for " + entity.etf$getType() + ": " + entity.etf$getUuid());
                     ESFSoundContext.lastRuleMet.put(entity.etf$getUuid(), rule.RULE_NUMBER);
                 }
             });

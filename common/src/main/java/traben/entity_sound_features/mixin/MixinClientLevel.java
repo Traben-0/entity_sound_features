@@ -18,6 +18,7 @@ import org.spongepowered.asm.mixin.Shadow;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
+import traben.entity_sound_features.ESF;
 import traben.entity_sound_features.ESFSoundContext;
 
 import java.util.function.Supplier;
@@ -37,10 +38,14 @@ public abstract class MixinClientLevel extends Level {
     private void esf$discoverEntity(final double x, final double y, final double z, final SoundEvent soundEvent,
                                     final SoundSource soundSource, final float g, final float h, final boolean bl,
                                     final long l, final CallbackInfo ci) {
+        ESFSoundContext.entitySource = null;
         if (ESFSoundContext.shouldCaptureEntity(soundEvent.getLocation())) {
             ESFSoundContext.searchForEntity(getEntities().getAll(), x, y, z);
             if(ESFSoundContext.entitySource == null)
                 ESFSoundContext.searchForBlockEntity(this, x, y, z);
+        }
+        if (ESF.config().getConfig().announceCompatibleSounds.all()) {
+            ESF.log("found entity at " + ESFSoundContext.entitySource.etf$getBlockPos().toShortString() + ", for sound at " + x + ", " + y + ", " + z);
         }
     }
 

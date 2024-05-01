@@ -18,10 +18,10 @@ import traben.tconfig.gui.entries.TConfigEntryEnumSlider;
 
 public class ESFConfig extends TConfig {
 
-    public boolean preCheckAllEntities = true;
+//    public boolean preCheckAllEntities = true;
     public boolean logSoundSetup = false;
 
-    public EntitySearchMode entitySearchMode = EntitySearchMode.EXACT;
+    public EntitySearchMode entitySearchMode = EntitySearchMode.BLOCK;
 
     public AnnounceMode announceCompatibleSounds = AnnounceMode.NONE;
 
@@ -41,8 +41,8 @@ public class ESFConfig extends TConfig {
     public TConfigEntryCategory getGUIOptions() {
         return new TConfigEntryCategory.Empty().add(
                 new TConfigEntryCategory("config.entity_features.sounds_main").add(
-                        new TConfigEntryBoolean("entity_sound_features.config.pre_check", "entity_sound_features.config.pre_check.tooltip",
-                                () -> preCheckAllEntities, value -> preCheckAllEntities = value, true),
+//                        new TConfigEntryBoolean("entity_sound_features.config.pre_check", "entity_sound_features.config.pre_check.tooltip",
+//                                () -> preCheckAllEntities, value -> preCheckAllEntities = value, true),
                         new TConfigEntryBoolean("entity_sound_features.config.log_setup", "entity_sound_features.config.log_setup.tooltip",
                                 () -> logSoundSetup, value -> logSoundSetup = value, false),
                         new TConfigEntryEnumButton<>("entity_sound_features.config.announce", "entity_sound_features.config.announce.tooltip",
