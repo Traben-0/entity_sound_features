@@ -48,7 +48,7 @@ public class ESFConfig extends TConfig {
                         new TConfigEntryEnumButton<>("entity_sound_features.config.announce", "entity_sound_features.config.announce.tooltip",
                                 () -> announceCompatibleSounds, value -> announceCompatibleSounds = value, AnnounceMode.NONE),
                        new TConfigEntryEnumSlider<>("entity_sound_features.config.entity_search", "entity_sound_features.config.entity_search.tooltip",
-                                () -> entitySearchMode, value -> entitySearchMode = value, EntitySearchMode.EXACT)
+                                () -> entitySearchMode, value -> entitySearchMode = value, EntitySearchMode.BLOCK)
 
                 ),
                 getEntitySettings()
