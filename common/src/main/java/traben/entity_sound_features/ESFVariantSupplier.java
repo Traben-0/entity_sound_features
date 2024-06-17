@@ -64,10 +64,14 @@ public class ESFVariantSupplier {
         boolean log = ESF.config().getConfig().logSoundSetup;
         try {
             String propertiesPath = soundEventResource.getNamespace() + ":esf/" + soundEventResource.getPath().replaceAll("\\.", "/") + ".properties";
+            #if MC >= MC_21
+            if (ResourceLocation.tryParse(propertiesPath) != null) {
+            #else
             if (ResourceLocation.isValidResourceLocation(propertiesPath)) {
-                ResourceLocation properties = new ResourceLocation(propertiesPath);
+                #endif
+                ResourceLocation properties = ESF.res(propertiesPath);
                 var variator = ETFApi.getVariantSupplierOrNull(properties,
-                        new ResourceLocation(propertiesPath.replaceAll("\\.properties$", ".json")), "sounds", "sound");
+                        ESF.res(propertiesPath.replaceAll("\\.properties$", ".json")), "sounds", "sound");
                 if (variator != null) {
                     if (log) ESF.log(propertiesPath + " ESF sound properties found for: " + soundEventResource);
                     if (log) ESF.log("suffixes: " + variator.getAllSuffixes());
@@ -79,14 +83,14 @@ public class ESFVariantSupplier {
                         String soundPrefix = propertiesPath.replaceAll("\\.properties$", "");
 
                         for (int suffix : suffixes) {
-                            var soundLocation = new ResourceLocation(soundPrefix + suffix + ".json");
+                            var soundLocation = ESF.res(soundPrefix + suffix + ".json");
                             Optional<Resource> soundResource = Minecraft.getInstance().getResourceManager().getResource(soundLocation);
                             if (soundResource.isPresent()) {
                                 if (log) ESF.log(propertiesPath + " adding variants from json: " + soundLocation);
                                 //variantSounds.put(suffix, new ESFSound(soundLocation));
                                 parseSoundEventVariant(soundLocation, soundResource.get(), variantSounds, suffix);
                             } else {
-                                ResourceLocation ogg = new ResourceLocation(soundLocation.getNamespace(),
+                                ResourceLocation ogg = ESF.res(soundLocation.getNamespace(),
                                         soundLocation.getPath().replaceAll("\\.json$", ".ogg"));
                                 //try replace json file with direct .ogg
                                 if (Minecraft.getInstance().getResourceManager().getResource(ogg).isPresent()) {
@@ -121,7 +125,7 @@ public class ESFVariantSupplier {
                 switch (sound.getType()) {
                     case FILE:
                         //try ogg in esf directory first
-                        ResourceLocation ogg = new ResourceLocation(soundJson.getNamespace(),
+                        ResourceLocation ogg = ESF.res(soundJson.getNamespace(),
                                 "esf/" + sound.getLocation().getPath() + ".ogg");
                         if (Minecraft.getInstance().getResourceManager().getResource(ogg).isPresent()) {
                             //esf folder sound
@@ -145,7 +149,13 @@ public class ESFVariantSupplier {
                                     return SoundManager.EMPTY_SOUND;
                                 } else {
                                     Sound soundx = weighedSoundEvents.getSound(randomSource);
-                                    return new Sound(soundx.getLocation().toString(), new MultipliedFloats(soundx.getVolume(), sound.getVolume()), new MultipliedFloats(soundx.getPitch(), sound.getPitch()), sound.getWeight(), Sound.Type.FILE, soundx.shouldStream() || sound.shouldStream(), soundx.shouldPreload(), soundx.getAttenuationDistance());
+                                    return new Sound(
+                                            #if MC >= MC_21
+                                            soundx.getLocation(),
+                                            #else
+                                            soundx.getLocation().toString(),
+                                            #endif
+                                            new MultipliedFloats(soundx.getVolume(), sound.getVolume()), new MultipliedFloats(soundx.getPitch(), sound.getPitch()), sound.getWeight(), Sound.Type.FILE, soundx.shouldStream() || sound.shouldStream(), soundx.shouldPreload(), soundx.getAttenuationDistance());
                                 }
                             }
 

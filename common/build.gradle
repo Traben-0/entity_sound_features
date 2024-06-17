@@ -8,11 +8,21 @@ dependencies {
     modImplementation "net.fabricmc:fabric-loader:${rootProject.fabric_loader_version}"
 
 //    modImplementation ("maven.modrinth:entitytexturefeatures:${project.entitytexturefeatures_version}")
-    modImplementation files("build/entity_texture_features_fabric_1.20.4-6.0.jar")
+
+    //use ifs instead
+    int mc = project.mc_build as int
+    if (mc == 5){
+        modImplementation files("build/entity_texture_features_fabric_1.20.4-6.0.jar")
+    }else if (mc == 6){
+        modImplementation files("build/entity_texture_features_fabric_1.20.6-6.1.1.jar")
+    } else if (mc == 7){
+        modImplementation files("build/entity_texture_features_fabric_1.21-6.1.1.jar")
+    }
+
 }
 
 loom {
-    accessWidenerPath = file("src/main/resources/entity_sound_features.accesswidener")
+    accessWidenerPath = file("src/main/resources/entity_sound_features_${project.mc_build}.accesswidener")
 }
 
 publishing {

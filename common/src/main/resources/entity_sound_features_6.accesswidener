@@ -1,0 +1,12 @@
+accessWidener v2  named
+
+accessible field net/minecraft/client/sounds/SoundManager soundCache Ljava/util/Map;
+accessible field net/minecraft/client/sounds/SoundManager soundEngine Lnet/minecraft/client/sounds/SoundEngine;
+accessible method net/minecraft/client/sounds/SoundManager prepare (Lnet/minecraft/server/packs/resources/ResourceManager;Lnet/minecraft/util/profiling/ProfilerFiller;)Lnet/minecraft/client/sounds/SoundManager$Preparations;
+accessible class net/minecraft/client/sounds/SoundManager$Preparations
+accessible field net/minecraft/client/sounds/SoundManager$Preparations soundCache Ljava/util/Map;
+
+accessible field net/minecraft/client/renderer/blockentity/BlockEntityRenderers PROVIDERS Ljava/util/Map;
+
+accessible field net/minecraft/client/sounds/SoundManager GSON Lcom/google/gson/Gson;
+

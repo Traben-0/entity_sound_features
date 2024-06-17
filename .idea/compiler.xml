@@ -1,6 +1,64 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="CompilerConfiguration">
-    <bytecodeTargetLevel target="17" />
+    <annotationProcessing>
+      <profile name="Gradle Imported" enabled="true">
+        <outputRelativeToContentRoot value="true" />
+        <processorPath useClasspath="false">
+          <entry name="$USER_HOME$/.gradle/caches/modules-2/files-2.1/systems.manifold/manifold-preprocessor/2023.1.17/899bdff5fa05f34c6b39c1cd3e4b13014962b38c/manifold-preprocessor-2023.1.17.jar" />
+          <entry name="$USER_HOME$/.gradle/caches/modules-2/files-2.1/systems.manifold/manifold/2023.1.17/5bf2b90cd2043b55abeda04702db09cec86e9f7b/manifold-2023.1.17.jar" />
+          <entry name="$USER_HOME$/.gradle/caches/modules-2/files-2.1/systems.manifold/manifold-rt/2023.1.17/8ea97f4e686c0fa420689c2da6fa0bf23054a557/manifold-rt-2023.1.17.jar" />
+          <entry name="$USER_HOME$/.gradle/caches/modules-2/files-2.1/systems.manifold/manifold-util/2023.1.17/df1f5ffa54cb8d37e04a996d8f0765fff109a76b/manifold-util-2023.1.17.jar" />
+        </processorPath>
+        <module name="entity-sound-features.neoforge.main" />
+      </profile>
+      <profile name="Gradle Imported" enabled="true">
+        <outputRelativeToContentRoot value="true" />
+        <option name="defaultObfuscationEnv" value="named:intermediary" />
+        <option name="inMapFileNamedIntermediary" value="C:\Users\bentr\.gradle\caches\fabric-loom\1.20.6\loom.mappings.1_20_6.layered+hash.40359-v2\mappings.tiny" />
+        <option name="outMapFileNamedIntermediary" value="C:\Users\bentr\IdeaProjects\entity_sound_features\common\build\loom-cache\mixin-map-loom.mappings.1_20_6.layered+hash.40359-v2.main.tiny" />
+        <option name="outRefMapFile" value="C:\Users\bentr\IdeaProjects\entity_sound_features\common\build\classes\java\main\entity_sound_features-common-refmap.json" />
+        <option name="quiet" value="true" />
+        <processorPath useClasspath="false">
+          <entry name="$USER_HOME$/.gradle/caches/modules-2/files-2.1/systems.manifold/manifold-preprocessor/2023.1.17/899bdff5fa05f34c6b39c1cd3e4b13014962b38c/manifold-preprocessor-2023.1.17.jar" />
+          <entry name="$USER_HOME$/.gradle/caches/modules-2/files-2.1/systems.manifold/manifold/2023.1.17/5bf2b90cd2043b55abeda04702db09cec86e9f7b/manifold-2023.1.17.jar" />
+          <entry name="$USER_HOME$/.gradle/caches/modules-2/files-2.1/systems.manifold/manifold-rt/2023.1.17/8ea97f4e686c0fa420689c2da6fa0bf23054a557/manifold-rt-2023.1.17.jar" />
+          <entry name="$USER_HOME$/.gradle/caches/modules-2/files-2.1/systems.manifold/manifold-util/2023.1.17/df1f5ffa54cb8d37e04a996d8f0765fff109a76b/manifold-util-2023.1.17.jar" />
+        </processorPath>
+        <module name="entity-sound-features.common.main" />
+      </profile>
+      <profile name="Gradle Imported" enabled="true">
+        <outputRelativeToContentRoot value="true" />
+        <option name="defaultObfuscationEnv" value="named:intermediary" />
+        <option name="inMapFileNamedIntermediary" value="C:\Users\bentr\.gradle\caches\fabric-loom\1.20.6\loom.mappings.1_20_6.layered+hash.40359-v2\mappings.tiny" />
+        <option name="outMapFileNamedIntermediary" value="C:\Users\bentr\IdeaProjects\entity_sound_features\fabric\build\loom-cache\mixin-map-loom.mappings.1_20_6.layered+hash.40359-v2.main.tiny" />
+        <option name="outRefMapFile" value="C:\Users\bentr\IdeaProjects\entity_sound_features\fabric\build\classes\java\main\entity_sound_features_fabric_1.19.4+-fabric-refmap.json" />
+        <option name="quiet" value="true" />
+        <processorPath useClasspath="false">
+          <entry name="$USER_HOME$/.gradle/caches/modules-2/files-2.1/systems.manifold/manifold-preprocessor/2023.1.17/899bdff5fa05f34c6b39c1cd3e4b13014962b38c/manifold-preprocessor-2023.1.17.jar" />
+          <entry name="$USER_HOME$/.gradle/caches/modules-2/files-2.1/systems.manifold/manifold/2023.1.17/5bf2b90cd2043b55abeda04702db09cec86e9f7b/manifold-2023.1.17.jar" />
+          <entry name="$USER_HOME$/.gradle/caches/modules-2/files-2.1/systems.manifold/manifold-rt/2023.1.17/8ea97f4e686c0fa420689c2da6fa0bf23054a557/manifold-rt-2023.1.17.jar" />
+          <entry name="$USER_HOME$/.gradle/caches/modules-2/files-2.1/systems.manifold/manifold-util/2023.1.17/df1f5ffa54cb8d37e04a996d8f0765fff109a76b/manifold-util-2023.1.17.jar" />
+        </processorPath>
+        <module name="entity-sound-features.fabric.main" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel target="17">
+      <module name="entity_sound_features" target="21" />
+      <module name="entity_sound_features.common" target="21" />
+      <module name="entity_sound_features.common.main" target="21" />
+      <module name="entity_sound_features.common.test" target="21" />
+      <module name="entity_sound_features.fabric" target="21" />
+      <module name="entity_sound_features.fabric.main" target="21" />
+      <module name="entity_sound_features.fabric.test" target="21" />
+      <module name="entity_sound_features.main" target="21" />
+      <module name="entity_sound_features.neoforge" target="21" />
+      <module name="entity_sound_features.test" target="21" />
+      <module name="traben.entity_sound_features.neoforge.main" target="21" />
+      <module name="traben.entity_sound_features.neoforge.test" target="21" />
+    </bytecodeTargetLevel>
+  </component>
+  <component name="JavacSettings">
+    <option name="ADDITIONAL_OPTIONS_STRING" value="-Xplugin:Manifold " />
   </component>
 </project>

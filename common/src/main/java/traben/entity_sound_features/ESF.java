@@ -2,6 +2,8 @@ package traben.entity_sound_features;
 
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.screens.Screen;
+import net.minecraft.resources.ResourceLocation;
+import org.jetbrains.annotations.NotNull;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import traben.entity_texture_features.ETF;
@@ -10,6 +12,22 @@ import traben.entity_texture_features.features.property_reading.properties.Rando
 import traben.tconfig.TConfigHandler;
 
 public class ESF {
+
+    public static @NotNull ResourceLocation res(String fullPath){
+        #if MC >= MC_21
+        return ResourceLocation.parse(fullPath);
+        #else 
+        return ESF.res(fullPath);
+        #endif
+    }
+
+    public static @NotNull ResourceLocation res(String namespace, String path){
+        #if MC >= MC_21
+        return ResourceLocation.fromNamespaceAndPath(namespace, path);
+        #else 
+        return ESF.res(namespace, path);
+        #endif
+    }
     public static final String MOD_ID = "entity_sound_features";
 
     private static final Logger LOGGER = LoggerFactory.getLogger(MOD_ID);

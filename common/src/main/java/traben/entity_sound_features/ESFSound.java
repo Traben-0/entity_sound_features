@@ -7,11 +7,22 @@ import org.jetbrains.annotations.NotNull;
 
 public class ESFSound extends Sound {
     public ESFSound(final ResourceLocation soundLocation) {
-        super(soundLocation.toString(), ConstantFloat.of(1.0F), ConstantFloat.of(1.0F), 1, Type.FILE, false, false, 16);
+        super(
+                #if MC >= MC_21
+                soundLocation,
+                #else
+                soundLocation.toString(),
+                #endif
+                ConstantFloat.of(1.0F), ConstantFloat.of(1.0F), 1, Type.FILE, false, false, 16);
     }
 
     public ESFSound(final ResourceLocation soundLocation, Sound copyFrom) {
-        super(soundLocation.toString(),
+        super(
+                #if MC >= MC_21
+                soundLocation,
+                #else
+                soundLocation.toString(),
+                #endif
                 copyFrom.getVolume(),
                 copyFrom.getPitch(),
                 copyFrom.getWeight(),

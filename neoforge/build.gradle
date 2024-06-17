@@ -1,5 +1,5 @@
 plugins {
-    id "com.github.johnrengelman.shadow" version "7.1.2"
+    id "com.github.johnrengelman.shadow" version "8.1.1"
 }
 loom {
     accessWidenerPath = project(":common").loom.accessWidenerPath
@@ -10,8 +10,8 @@ loom {
 //    }
 }
 
-//explicitly set the version name, neoforge is not multi version stable at this time
-archivesBaseName = rootProject.archives_base_name + "_neoforge_1.20.4"
+
+archivesBaseName = rootProject.archives_base_name + "_neoforge_${rootProject.minecraft_version}"
 
 architectury {
     platformSetupLoomIde()
@@ -38,13 +38,13 @@ dependencies {
     shadowCommon(project(path: ":common", configuration: "transformProductionNeoForge")) { transitive = false }
 }
 
-processResources {
-    inputs.property "version", project.version
-
-    filesMatching("META-INF/mods.toml") {
-        expand "version": project.version
-    }
-}
+//processResources {
+//    inputs.property "version", project.version
+//
+//    filesMatching("META-INF/mods.toml") {
+//        expand "version": project.version
+//    }
+//}
 
 shadowJar {
     exclude "fabric.mod.json"

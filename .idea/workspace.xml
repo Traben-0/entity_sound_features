@@ -4,18 +4,51 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="12ca725e-80cd-4572-8c5f-3cca2a538ea1" name="Changes" comment="version range testing and a tweak to allow 1.19.4 up to 1.20.6 in the 1 jar">
+    <list default="true" id="12ca725e-80cd-4572-8c5f-3cca2a538ea1" name="Changes" comment="version bump">
+      <change afterPath="$PROJECT_DIR$/common/src/main/resources/entity_sound_features_6.accesswidener" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/common/src/main/resources/entity_sound_features_7.accesswidener" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/neoforge/src/main/resources/META-INF/neoforge.mods.toml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/property_variants/5.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/property_variants/6.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/property_variants/7.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/jarRepositories.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/jarRepositories.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules/common/entity_sound_features.common.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules/common/entity_sound_features.common.main.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules/common/entity_sound_features.common.test.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules/fabric/entity_sound_features.fabric.main.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules/fabric/entity_sound_features.fabric.test.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/runConfigurations/Minecraft_Server___fabric__fabric.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/runConfigurations/Minecraft_Server___fabric__fabric.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/runConfigurations/Minecraft_Server___forge__forge.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/runConfigurations/Minecraft_Server___forge__forge.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/runConfigurations/Minecraft_Server___neoforge__neoforge.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/runConfigurations/Minecraft_Server___neoforge__neoforge.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/common/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/src/main/resources/entity_sound_features.accesswidener" beforeDir="false" afterPath="$PROJECT_DIR$/common/src/main/resources/entity_sound_features_5.accesswidener" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/fabric/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/fabric/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/fabric/src/main/resources/fabric.mod.json" beforeDir="false" afterPath="$PROJECT_DIR$/fabric/src/main/resources/fabric.mod.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/forge/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/forge/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/forge/src/main/resources/META-INF/mods.toml" beforeDir="false" afterPath="$PROJECT_DIR$/forge/src/main/resources/META-INF/mods.toml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gradle.properties" beforeDir="false" afterPath="$PROJECT_DIR$/gradle.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.properties" beforeDir="false" afterPath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/neoforge/.gradle/architectury/.properties" beforeDir="false" afterPath="$PROJECT_DIR$/neoforge/.gradle/architectury/.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/neoforge/.gradle/architectury/.transforms" beforeDir="false" afterPath="$PROJECT_DIR$/neoforge/.gradle/architectury/.transforms" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/neoforge/.gradle/loom-cache/forge_minecraft_classpath.txt" beforeDir="false" afterPath="$PROJECT_DIR$/neoforge/.gradle/loom-cache/forge_minecraft_classpath.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/neoforge/.gradle/loom-cache/launch.cfg" beforeDir="false" afterPath="$PROJECT_DIR$/neoforge/.gradle/loom-cache/launch.cfg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/neoforge/.gradle/loom-cache/remapClasspath.txt" beforeDir="false" afterPath="$PROJECT_DIR$/neoforge/.gradle/loom-cache/remapClasspath.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/neoforge/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/neoforge/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/neoforge/src/main/java/traben/entity_sound_features/neoforge/Entity_sound_featuresNeoForge.java" beforeDir="false" afterPath="$PROJECT_DIR$/neoforge/src/main/java/traben/entity_sound_features/neoforge/Entity_sound_featuresNeoForge.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/neoforge/src/main/resources/META-INF/mods.toml" beforeDir="false" afterPath="$PROJECT_DIR$/neoforge/src/main/resources/META-INF/mods.toml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/settings.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/settings.gradle" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
-  </component>
-  <component name="CodeInsightWorkspaceSettings">
-    <option name="optimizeImportsOnTheFly" value="true" />
   </component>
   <component name="ExternalProjectsData">
     <projectState path="$PROJECT_DIR$">
@@ -83,22 +116,33 @@
     &quot;git-widget-placeholder&quot;: &quot;master&quot;,
     &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
     &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/bentr/IdeaProjects/entity_sound_features&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/bentr/IdeaProjects/entity_sound_features/common/src/main/resources&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
     &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
     &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
     &quot;run.code.analysis.last.selected.profile&quot;: &quot;pProject Default&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;reference.settingsdialog.project.gradle&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
 }</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\bentr\IdeaProjects\entity_sound_features\common\src\main\resources" />
+      <recent name="C:\Users\bentr\IdeaProjects\entity_sound_features\property_variants" />
+      <recent name="C:\Users\bentr\IdeaProjects\entity_sound_features\common\src\main\resources\assets\entity_sound_features" />
+      <recent name="C:\Users\bentr\IdeaProjects\entity_sound_features\neoforge\src\main\resources\META-INF" />
       <recent name="C:\Users\bentr\IdeaProjects\entity_sound_features" />
     </key>
     <key name="MoveMembersDialog.RECENTS_KEY">
       <recent name="traben.entity_sound_features.ESFVariantSupplier" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\bentr\IdeaProjects\entity_sound_features\common\src\main\resources" />
     </key>
     <key name="MoveInnerDialog.RECENTS_KEY">
       <recent name="traben.entity_sound_features.mixin" />
@@ -136,7 +180,7 @@
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="jdk-17.0.9-temurin-17.0.9-f644763e9732-636ea113" />
+        <option value="jdk-17.0.10-corretto-17.0.10-4caba194b151-5cd809f4" />
       </set>
     </attachedChunks>
   </component>
@@ -175,7 +219,12 @@
       <workItem from="1714514548017" duration="374000" />
       <workItem from="1714514936600" duration="112000" />
       <workItem from="1714517207452" duration="377000" />
-      <workItem from="1714566632858" duration="12444000" />
+      <workItem from="1714566632858" duration="13234000" />
+      <workItem from="1714602537299" duration="161000" />
+      <workItem from="1718615192350" duration="1890000" />
+      <workItem from="1718617102836" duration="91000" />
+      <workItem from="1718617214773" duration="1048000" />
+      <workItem from="1718618307050" duration="1149000" />
     </task>
     <task id="LOCAL-00001" summary="build stuff">
       <option name="closed" value="true" />
@@ -281,7 +330,23 @@
       <option name="project" value="LOCAL" />
       <updated>1714579845479</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="file names reflect version range they work in">
+      <option name="closed" value="true" />
+      <created>1714580065643</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1714580065643</updated>
+    </task>
+    <task id="LOCAL-00015" summary="version bump">
+      <option name="closed" value="true" />
+      <created>1714580090594</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1714580090594</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -325,6 +390,12 @@
     <MESSAGE value="1.20.6" />
     <MESSAGE value="works in 1.20.6" />
     <MESSAGE value="version range testing and a tweak to allow 1.19.4 up to 1.20.6 in the 1 jar" />
-    <option name="LAST_COMMIT_MESSAGE" value="version range testing and a tweak to allow 1.19.4 up to 1.20.6 in the 1 jar" />
+    <MESSAGE value="file names reflect version range they work in" />
+    <MESSAGE value="version bump" />
+    <option name="LAST_COMMIT_MESSAGE" value="version bump" />
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
   </component>
 </project>

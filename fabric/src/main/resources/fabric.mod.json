@@ -36,7 +36,7 @@
   ],
   "depends": {
     "fabricloader": "*",
-    "minecraft": ">=1.19.4",
+    "minecraft": "${compatible_mc_fabric}",
     "entity_texture_features": ">=6.0"
   },
   "custom": {

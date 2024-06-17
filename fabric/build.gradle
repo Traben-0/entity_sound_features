@@ -1,5 +1,5 @@
 plugins {
-    id "com.github.johnrengelman.shadow" version "7.1.2"
+    id "com.github.johnrengelman.shadow" version "8.1.1"
 }
 
 architectury {
@@ -7,7 +7,11 @@ architectury {
     fabric()
 }
 
-archivesBaseName = rootProject.archives_base_name + "_fabric_1.19.4+"
+if ( "1.20.4".equals(rootProject.minecraft_version)){
+    archivesBaseName = rootProject.archives_base_name + "_fabric_1.19.4+"
+}else{
+    archivesBaseName = rootProject.archives_base_name + "_fabric_${rootProject.minecraft_version}"
+}
 
 loom {
     accessWidenerPath = project(":common").loom.accessWidenerPath
@@ -32,13 +36,7 @@ dependencies {
     }
 }
 
-processResources {
-    inputs.property "version", project.version
 
-    filesMatching("fabric.mod.json") {
-        expand "version": project.version
-    }
-}
 
 shadowJar {
     configurations = [project.configurations.shadowCommon]
