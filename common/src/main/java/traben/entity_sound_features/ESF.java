@@ -17,7 +17,7 @@ public class ESF {
         #if MC >= MC_21
         return ResourceLocation.parse(fullPath);
         #else 
-        return ESF.res(fullPath);
+        return new ResourceLocation(fullPath);
         #endif
     }
 
@@ -25,7 +25,7 @@ public class ESF {
         #if MC >= MC_21
         return ResourceLocation.fromNamespaceAndPath(namespace, path);
         #else 
-        return ESF.res(namespace, path);
+        return new ResourceLocation(namespace, path);
         #endif
     }
     public static final String MOD_ID = "entity_sound_features";
