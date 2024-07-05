@@ -38,7 +38,9 @@ public abstract class MixinClientLevel extends Level {
     private void esf$discoverEntity(final double x, final double y, final double z, final SoundEvent soundEvent,
                                     final SoundSource soundSource, final float g, final float h, final boolean bl,
                                     final long l, final CallbackInfo ci) {
+
         ESFSoundContext.entitySource = null;
+        //todo consider sound source limiting???
         if (ESFSoundContext.shouldCaptureEntity(soundEvent.getLocation())) {
             ESFSoundContext.searchForEntity(getEntities().getAll(), x, y, z);
             if(ESFSoundContext.entitySource == null)

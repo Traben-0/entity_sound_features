@@ -1,6 +1,7 @@
-package traben.entity_sound_features;
+package traben.entity_sound_features.properties;
 
 import org.jetbrains.annotations.NotNull;
+import traben.entity_sound_features.ESFSoundContext;
 import traben.entity_texture_features.features.property_reading.properties.RandomProperty;
 import traben.entity_texture_features.features.property_reading.properties.generic_properties.SimpleIntegerArrayProperty;
 import traben.entity_texture_features.utils.ETFEntity;

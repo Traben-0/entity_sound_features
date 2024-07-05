@@ -6,6 +6,12 @@ import net.minecraft.resources.ResourceLocation;
 import org.jetbrains.annotations.NotNull;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import traben.entity_model_features.EMFAnimationApi;
+import traben.entity_sound_features.methods.ESFIsPlayingSoundMethodFactory;
+import traben.entity_sound_features.methods.ESFPlaySoundMethodFactory;
+import traben.entity_sound_features.properties.PlayingSoundProperty;
+import traben.entity_sound_features.properties.SoundRuleIndexProperty;
+import traben.entity_sound_features.properties.SoundSuffixProperty;
 import traben.entity_texture_features.ETF;
 import traben.entity_texture_features.ETFApi;
 import traben.entity_texture_features.features.property_reading.properties.RandomProperties;
@@ -52,10 +58,24 @@ public class ESF {
                         SoundRuleIndexProperty::getPropertyOrNull),
                 RandomProperties.RandomPropertyFactory.of("soundSuffix",
                         "entity_sound_features.suffix_property",
-                        SoundSuffixProperty::getPropertyOrNull)
+                        SoundSuffixProperty::getPropertyOrNull),
+                RandomProperties.RandomPropertyFactory.of("playingSound",
+                        "playingSound",
+                        PlayingSoundProperty::getPropertyOrNull)
                 );
 
+        EMFAnimationApi.registerCustomFunctionFactory(
+                MOD_ID,"playsound",
+                "plays a sound",
+                ESFPlaySoundMethodFactory::new);
+        EMFAnimationApi.registerCustomFunctionFactory(
+                MOD_ID,"playingsound()",
+                "true if a sound is playing",
+                ESFIsPlayingSoundMethodFactory::new);
+
     }
+
+
 
     //mod menu config screen factory
     public static Screen getConfigScreen(Screen parent) {

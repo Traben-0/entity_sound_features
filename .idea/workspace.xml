@@ -4,15 +4,30 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="12ca725e-80cd-4572-8c5f-3cca2a538ea1" name="Changes" comment="DEFAULT CONFIG VALUE CHANGED">
+    <list default="true" id="12ca725e-80cd-4572-8c5f-3cca2a538ea1" name="Changes" comment="new properties and methods">
+      <change afterPath="$PROJECT_DIR$/common/src/main/java/traben/entity_sound_features/methods/ESFIsPlayingSoundMethodFactory.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/common/src/main/java/traben/entity_sound_features/methods/ESFPlaySoundMethodFactory.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/common/src/main/java/traben/entity_sound_features/properties/PlayingSoundProperty.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/runConfigurations/Minecraft_Server___fabric__fabric.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/runConfigurations/Minecraft_Server___fabric__fabric.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/runConfigurations/Minecraft_Server___forge__forge.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/runConfigurations/Minecraft_Server___forge__forge.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/runConfigurations/Minecraft_Server___neoforge__neoforge.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/runConfigurations/Minecraft_Server___neoforge__neoforge.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/common/build.gradle" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/common/src/main/java/traben/entity_sound_features/ESF.java" beforeDir="false" afterPath="$PROJECT_DIR$/common/src/main/java/traben/entity_sound_features/ESF.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/src/main/java/traben/entity_sound_features/SoundRuleIndexProperty.java" beforeDir="false" afterPath="$PROJECT_DIR$/common/src/main/java/traben/entity_sound_features/properties/SoundRuleIndexProperty.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/src/main/java/traben/entity_sound_features/SoundSuffixProperty.java" beforeDir="false" afterPath="$PROJECT_DIR$/common/src/main/java/traben/entity_sound_features/properties/SoundSuffixProperty.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/src/main/java/traben/entity_sound_features/mixin/MixinClientLevel.java" beforeDir="false" afterPath="$PROJECT_DIR$/common/src/main/java/traben/entity_sound_features/mixin/MixinClientLevel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/src/main/resources/entity_sound_features_7.accesswidener" beforeDir="false" afterPath="$PROJECT_DIR$/common/src/main/resources/entity_sound_features_7.accesswidener" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/gradle.properties" beforeDir="false" afterPath="$PROJECT_DIR$/gradle.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/property_variants/6.properties" beforeDir="false" afterPath="$PROJECT_DIR$/property_variants/6.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/neoforge/.gradle/architectury/.properties" beforeDir="false" afterPath="$PROJECT_DIR$/neoforge/.gradle/architectury/.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/neoforge/.gradle/architectury/.transforms" beforeDir="false" afterPath="$PROJECT_DIR$/neoforge/.gradle/architectury/.transforms" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/neoforge/.gradle/loom-cache/forge_minecraft_classpath.txt" beforeDir="false" afterPath="$PROJECT_DIR$/neoforge/.gradle/loom-cache/forge_minecraft_classpath.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/neoforge/.gradle/loom-cache/launch.cfg" beforeDir="false" afterPath="$PROJECT_DIR$/neoforge/.gradle/loom-cache/launch.cfg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/neoforge/.gradle/loom-cache/log4j.xml" beforeDir="false" afterPath="$PROJECT_DIR$/neoforge/.gradle/loom-cache/log4j.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/neoforge/.gradle/loom-cache/remapClasspath.txt" beforeDir="false" afterPath="$PROJECT_DIR$/neoforge/.gradle/loom-cache/remapClasspath.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/property_variants/7.properties" beforeDir="false" afterPath="$PROJECT_DIR$/property_variants/7.properties" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -116,6 +131,10 @@
     <key name="MoveInnerDialog.RECENTS_KEY">
       <recent name="traben.entity_sound_features.mixin" />
     </key>
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="traben.entity_sound_features.methods" />
+      <recent name="traben.entity_sound_features.properties" />
+    </key>
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="traben.entity_sound_features" />
       <recent name="traben.entity_sound_features.forge.mixin" />
@@ -145,13 +164,6 @@
       <RunAsTest>false</RunAsTest>
       <method v="2" />
     </configuration>
-  </component>
-  <component name="SharedIndexes">
-    <attachedChunks>
-      <set>
-        <option value="jdk-17.0.10-corretto-17.0.10-4caba194b151-5cd809f4" />
-      </set>
-    </attachedChunks>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -195,7 +207,12 @@
       <workItem from="1718617214773" duration="1048000" />
       <workItem from="1718618307050" duration="2902000" />
       <workItem from="1718634781522" duration="17000" />
-      <workItem from="1719121324765" duration="365000" />
+      <workItem from="1719121324765" duration="601000" />
+      <workItem from="1719121979824" duration="113000" />
+      <workItem from="1719324269008" duration="12000" />
+      <workItem from="1720073413369" duration="5738000" />
+      <workItem from="1720145304247" duration="82000" />
+      <workItem from="1720156834231" duration="4305000" />
     </task>
     <task id="LOCAL-00001" summary="build stuff">
       <option name="closed" value="true" />
@@ -333,7 +350,15 @@
       <option name="project" value="LOCAL" />
       <updated>1718621210194</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="build issue fixed">
+      <option name="closed" value="true" />
+      <created>1719121879532</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1719121879532</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -381,7 +406,9 @@
     <MESSAGE value="version bump" />
     <MESSAGE value="multiversion source code rework and 1.21 and 1.20.6" />
     <MESSAGE value="DEFAULT CONFIG VALUE CHANGED" />
-    <option name="LAST_COMMIT_MESSAGE" value="DEFAULT CONFIG VALUE CHANGED" />
+    <MESSAGE value="build issue fixed" />
+    <MESSAGE value="new properties and methods" />
+    <option name="LAST_COMMIT_MESSAGE" value="new properties and methods" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

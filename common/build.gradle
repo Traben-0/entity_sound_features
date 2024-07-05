@@ -12,11 +12,14 @@ dependencies {
     //use ifs instead
     int mc = project.mc_build as int
     if (mc == 5){
-        modImplementation files("build/entity_texture_features_fabric_1.20.4-6.0.jar")
+        modImplementation files("build/entity_texture_features_fabric_1.20.4-6.1.3.jar")
+        modImplementation files("build/entity_model_features_fabric_1.20.4-2.1.3.jar")
     }else if (mc == 6){
-        modImplementation files("build/entity_texture_features_fabric_1.20.6-6.1.1.jar")
+        modImplementation files("build/entity_texture_features_fabric_1.20.6-6.1.3.jar")
+        modImplementation files("build/entity_model_features_fabric_1.20.6-2.1.3.jar")
     } else if (mc == 7){
-        modImplementation files("build/entity_texture_features_fabric_1.21-6.1.1.jar")
+        modImplementation files("build/entity_texture_features_fabric_1.21-6.1.3.jar")
+        modImplementation files("build/entity_model_features_fabric_1.21-2.1.3.jar")
     }
 
 }
