@@ -7,6 +7,8 @@
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/common/entity-sound-features.common.test.iml" filepath="$PROJECT_DIR$/.idea/modules/common/entity-sound-features.common.test.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/fabric/entity-sound-features.fabric.main.iml" filepath="$PROJECT_DIR$/.idea/modules/fabric/entity-sound-features.fabric.main.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/fabric/entity-sound-features.fabric.test.iml" filepath="$PROJECT_DIR$/.idea/modules/fabric/entity-sound-features.fabric.test.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/forge/entity-sound-features.forge.main.iml" filepath="$PROJECT_DIR$/.idea/modules/forge/entity-sound-features.forge.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/forge/entity-sound-features.forge.test.iml" filepath="$PROJECT_DIR$/.idea/modules/forge/entity-sound-features.forge.test.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/neoforge/entity-sound-features.neoforge.main.iml" filepath="$PROJECT_DIR$/.idea/modules/neoforge/entity-sound-features.neoforge.main.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/neoforge/entity-sound-features.neoforge.test.iml" filepath="$PROJECT_DIR$/.idea/modules/neoforge/entity-sound-features.neoforge.test.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/forge/entity_sound_features.forge.main.iml" filepath="$PROJECT_DIR$/.idea/modules/forge/entity_sound_features.forge.main.iml" />

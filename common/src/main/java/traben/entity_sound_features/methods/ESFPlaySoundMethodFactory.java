@@ -4,6 +4,7 @@ package traben.entity_sound_features.methods;
 import net.minecraft.client.Minecraft;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.sounds.SoundSource;
+import net.minecraft.util.Mth;
 import net.minecraft.world.entity.Entity;
 import traben.entity_model_features.models.animation.EMFAnimation;
 import traben.entity_model_features.models.animation.EMFAnimationEntityContext;
@@ -65,15 +66,15 @@ public class ESFPlaySoundMethodFactory extends MathMethod {
                 //check delay
                 float delayVal = delay.getResult();
                 var currentTick = emfEntity.etf$getWorld().getGameTime();
-                if (lastSoundTick + delayVal > currentTick) return MathValue.FALSE;
+                if (lastSoundTick + (delayVal < 1 ? 1 : delayVal) > currentTick) return MathValue.FALSE;
 
                 //play sound
                 lastSoundTick = currentTick;
                 try {
                     emfEntity.etf$getWorld().playSound(Minecraft.getInstance().player, emfEntity.etf$getBlockPos(),
-                            SoundEvent.createFixedRangeEvent(res, Math.clamp(range.getResult(),0,128)),
+                            SoundEvent.createFixedRangeEvent(res, Mth.clamp( range.getResult(),0,128)),
                             emfEntity instanceof Entity entity ? entity.getSoundSource() : SoundSource.BLOCKS,
-                             Math.clamp(volume.getResult(),0,1), Math.clamp(pitch.getResult(),0,1));
+                             Mth.clamp( volume.getResult(),0,1), Mth.clamp(pitch.getResult(), 0.5F, 2.0F));
                     return MathValue.TRUE;
                 } catch (Exception e) {
                     return MathValue.FALSE;

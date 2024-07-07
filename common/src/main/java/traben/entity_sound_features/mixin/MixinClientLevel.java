@@ -20,6 +20,7 @@ import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 import traben.entity_sound_features.ESF;
 import traben.entity_sound_features.ESFSoundContext;
+import traben.entity_sound_features.properties.PlayingSoundProperty;
 
 import java.util.function.Supplier;
 
@@ -38,7 +39,6 @@ public abstract class MixinClientLevel extends Level {
     private void esf$discoverEntity(final double x, final double y, final double z, final SoundEvent soundEvent,
                                     final SoundSource soundSource, final float g, final float h, final boolean bl,
                                     final long l, final CallbackInfo ci) {
-
         ESFSoundContext.entitySource = null;
         //todo consider sound source limiting???
         if (ESFSoundContext.shouldCaptureEntity(soundEvent.getLocation())) {

@@ -60,17 +60,17 @@ public class ESF {
                         "entity_sound_features.suffix_property",
                         SoundSuffixProperty::getPropertyOrNull),
                 RandomProperties.RandomPropertyFactory.of("playingSound",
-                        "playingSound",
+                        "entity_sound_features.config.playingsound.property",
                         PlayingSoundProperty::getPropertyOrNull)
                 );
 
         EMFAnimationApi.registerCustomFunctionFactory(
                 MOD_ID,"playsound",
-                "plays a sound",
+                "entity_sound_features.config.playsound.method",
                 ESFPlaySoundMethodFactory::new);
         EMFAnimationApi.registerCustomFunctionFactory(
-                MOD_ID,"playingsound()",
-                "true if a sound is playing",
+                MOD_ID,"playingsound",
+                "entity_sound_features.config.playingsound.method",
                 ESFIsPlayingSoundMethodFactory::new);
 
     }

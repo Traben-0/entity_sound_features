@@ -10,3 +10,8 @@ accessible field net/minecraft/client/renderer/blockentity/BlockEntityRenderers 
 
 accessible field net/minecraft/client/sounds/SoundManager GSON Lcom/google/gson/Gson;
 
+accessible field net/minecraft/client/sounds/SoundEngine soundDeleteTime Ljava/util/Map;
+accessible field net/minecraft/client/sounds/SoundEngine instanceToChannel Ljava/util/Map;
+accessible field net/minecraft/client/sounds/SoundEngine tickCount I
+accessible field net/minecraft/client/sounds/SoundEngine loaded Z
+
