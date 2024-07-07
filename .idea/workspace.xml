@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="12ca725e-80cd-4572-8c5f-3cca2a538ea1" name="Changes" comment="new properties and methods">
+    <list default="true" id="12ca725e-80cd-4572-8c5f-3cca2a538ea1" name="Changes" comment="0.4">
       <change afterPath="$PROJECT_DIR$/UTILITY.MD" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/VARIATION.MD" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
@@ -209,7 +209,7 @@
       <workItem from="1720145304247" duration="82000" />
       <workItem from="1720156834231" duration="4990000" />
       <workItem from="1720217024456" duration="7000" />
-      <workItem from="1720324335553" duration="9013000" />
+      <workItem from="1720324335553" duration="9689000" />
     </task>
     <task id="LOCAL-00001" summary="build stuff">
       <option name="closed" value="true" />
@@ -363,7 +363,15 @@
       <option name="project" value="LOCAL" />
       <updated>1720161192246</updated>
     </task>
-    <option name="localTasksCounter" value="20" />
+    <task id="LOCAL-00020" summary="0.4">
+      <option name="closed" value="true" />
+      <created>1720334117240</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1720334117240</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -413,7 +421,8 @@
     <MESSAGE value="DEFAULT CONFIG VALUE CHANGED" />
     <MESSAGE value="build issue fixed" />
     <MESSAGE value="new properties and methods" />
-    <option name="LAST_COMMIT_MESSAGE" value="new properties and methods" />
+    <MESSAGE value="0.4" />
+    <option name="LAST_COMMIT_MESSAGE" value="0.4" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
