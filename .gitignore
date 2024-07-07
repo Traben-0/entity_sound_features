@@ -11,4 +11,5 @@
 /neoforge/build/
 /neoforge/.gradle/
 /.idea/
+/.architectury-transformer/
 /build.properties
