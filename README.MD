@@ -16,3 +16,4 @@ ESF also adds extra sound related utility to ETF and EMF in the form of sound pr
 - For instructions and an example of how to variate existing played sounds see [this guide](VARIATION.MD)
 
 - For instructions on how to use the added sound related utilities for ETF and EMF see [this guide](UTILITY.MD)
+
