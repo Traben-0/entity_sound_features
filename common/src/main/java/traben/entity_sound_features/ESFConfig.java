@@ -100,7 +100,7 @@ public class ESFConfig extends TConfig {
 
     @Override
     public ResourceLocation getModIcon() {
-        return ESF.res(ESF.MOD_ID, "textures/gui/icon.png");
+        return ESF.res(ESF.MOD_ID, "textures/gui/esf_mini.png");
     }
 
     public enum AnnounceMode {

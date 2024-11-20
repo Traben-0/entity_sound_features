@@ -1,8 +1,10 @@
 package traben.entity_sound_features.neoforge;
 
 
+import net.minecraft.client.gui.screens.Screen;
 import net.neoforged.api.distmarker.Dist;
 
+import net.neoforged.fml.ModContainer;
 import net.neoforged.fml.ModLoadingContext;
 import net.neoforged.fml.common.Mod;
 import net.neoforged.fml.loading.FMLEnvironment;
@@ -22,7 +24,10 @@ public class Entity_sound_featuresNeoForge {
 
             try {
                 ModLoadingContext.get().registerExtensionPoint(
-                                                #if MC >= MC_20_6
+                        #if MC >= MC_21
+                        IConfigScreenFactory.class,
+                        ()-> (ModContainer modContainer, Screen arg)-> ESF.getConfigScreen(arg));
+                        #elif MC >= MC_20_6
                         IConfigScreenFactory.class,
                         ()-> ESF::getConfigScreen);
                         #else

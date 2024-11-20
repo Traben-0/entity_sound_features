@@ -28,11 +28,19 @@ import java.util.function.Supplier;
 public abstract class MixinClientLevel extends Level {
 
 
+
+
     @Shadow protected abstract @NotNull LevelEntityGetter<Entity> getEntities();
 
+    #if MC < MC_21_2
     protected MixinClientLevel(final WritableLevelData writableLevelData, final ResourceKey<Level> resourceKey, final RegistryAccess registryAccess, final Holder<DimensionType> holder, final Supplier<ProfilerFiller> supplier, final boolean bl, final boolean bl2, final long l, final int i) {
         super(writableLevelData, resourceKey, registryAccess, holder, supplier, bl, bl2, l, i);
     }
+    #else
+    protected MixinClientLevel(final WritableLevelData writableLevelData, final ResourceKey<Level> resourceKey, final RegistryAccess registryAccess, final Holder<DimensionType> holder, final boolean bl, final boolean bl2, final long l, final int i) {
+        super(writableLevelData, resourceKey, registryAccess, holder, bl, bl2, l, i);
+    }
+    #endif
 
 
     @Inject(method = "playSound", at = @At(value = "HEAD"))
@@ -41,7 +49,13 @@ public abstract class MixinClientLevel extends Level {
                                     final long l, final CallbackInfo ci) {
         ESFSoundContext.entitySource = null;
         //todo consider sound source limiting???
-        if (ESFSoundContext.shouldCaptureEntity(soundEvent.getLocation())) {
+        if (ESFSoundContext.shouldCaptureEntity(
+                #if MC > MC_21
+                soundEvent.location()
+                #else
+                soundEvent.getLocation()
+                #endif
+        )) {
             ESFSoundContext.searchForEntity(getEntities().getAll(), x, y, z);
             if(ESFSoundContext.entitySource == null)
                 ESFSoundContext.searchForBlockEntity(this, x, y, z);

@@ -21,7 +21,13 @@ public class Entity_sound_featuresForge {
             try {
                 ModLoadingContext.get().registerExtensionPoint(
                         ConfigScreenHandler.ConfigScreenFactory.class,
-                        () -> new ConfigScreenHandler.ConfigScreenFactory(ESF::getConfigScreen));
+                        () -> new ConfigScreenHandler.ConfigScreenFactory(
+                                #if MC >= MC_21
+                                (a,b)-> ESF.getConfigScreen(a,b)
+                                #else
+                                ESF::getConfigScreen
+                                #endif
+                        ));
             } catch (NoClassDefFoundError e) {
                 ESF.logError("Mod config screen broken, download latest forge version");
             }
