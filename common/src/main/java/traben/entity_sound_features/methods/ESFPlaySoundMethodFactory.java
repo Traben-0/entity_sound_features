@@ -24,7 +24,7 @@ public class ESFPlaySoundMethodFactory extends MathMethod {
         boolean log = ESF.config().getConfig().logSoundSetup;
         if (log) ESF.log("creating sound EMF math function definition (no guaranteed failure log messages unless you enable EMF math logging):\n > " + args);
         try {
-            //sound event
+            // sound event
             String soundId = args.get(0);
             if (soundId == null || soundId.isBlank())
                 throw new EMFMathException("Sound event ID invalid");
@@ -32,16 +32,16 @@ public class ESFPlaySoundMethodFactory extends MathMethod {
             var event = Minecraft.getInstance().getSoundManager().getSoundEvent(res);
             if (event == null)
                 throw new EMFMathException("Sound event not found: " + soundId);
-            //event is valid sound event from here
+            // event is valid sound event from here
 
-            //required args
+            // required args
             MathComponent trueForSound = MathExpressionParser.getOptimizedExpression(args.get(1), false, calculationInstance);
             MathComponent delay = MathExpressionParser.getOptimizedExpression(args.get(2), false, calculationInstance);
             if (delay == NULL_EXPRESSION || trueForSound == NULL_EXPRESSION)
                 throw new EMFMathException("Invalid arguments");
-            //required args valid
+            // required args valid
 
-            //optional args
+            // optional args
             MathComponent volume;
             MathComponent pitch;
             MathComponent range;
@@ -56,19 +56,23 @@ public class ESFPlaySoundMethodFactory extends MathMethod {
                 pitch = () -> 1f;
                 range = () -> 16f;
             }
-            //all args valid
+            // all args valid
 
-            setSupplierAndOptimize(() -> {
-                //check entity
+            // dont optimize for constant args
+            supplier = () -> {
+                // check if set to play
+                if (!MathValue.toBoolean(trueForSound.getResult())) return MathValue.FALSE;
+
+                // check entity
                 var emfEntity = EMFAnimationEntityContext.getEMFEntity();
                 if (emfEntity == null || emfEntity.etf$getWorld() == null) return MathValue.FALSE;
 
-                //check delay
+                // check delay
                 float delayVal = delay.getResult();
                 var currentTick = emfEntity.etf$getWorld().getGameTime();
                 if (lastSoundTick + (delayVal < 1 ? 1 : delayVal) > currentTick) return MathValue.FALSE;
 
-                //play sound
+                // play sound
                 lastSoundTick = currentTick;
                 try {
                     emfEntity.etf$getWorld().playSound(Minecraft.getInstance().player, emfEntity.etf$getBlockPos(),
@@ -79,11 +83,11 @@ public class ESFPlaySoundMethodFactory extends MathMethod {
                 } catch (Exception e) {
                     return MathValue.FALSE;
                 }
-            });
+            };
             if (log) ESF.log("sound EMF math function definition created successfully for " + res);
 
         } catch (Exception e) {
-            //wrap any exception in EMFMathException adding function name
+            // wrap any exception in EMFMathException adding function name
             if (log) ESF.log("Error creating sound EMF math function definition: " + e.getMessage());
             throw new EMFMathException("Error in playsound() function: " + e.getMessage());
         }

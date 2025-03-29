@@ -1,6 +1,6 @@
 plugins {
     id "architectury-plugin" version "3.4-SNAPSHOT"
-    id "dev.architectury.loom" version "1.7-SNAPSHOT" apply false
+    id "dev.architectury.loom" version "1.10-SNAPSHOT" apply false
     id "systems.manifold.manifold-gradle-plugin" version "0.0.2-alpha"
 }
 
@@ -11,6 +11,8 @@ private void setupPreProcess(def index){
     MC_20_6 = 6
     MC_21   = 7
     MC_21_2 = 8
+    MC_21_4 = 9
+    MC_21_5 = 10
     MC      = ${index}
     """
 
@@ -60,7 +62,7 @@ subprojects {
 
         implementation 'com.demonwav.mcdev:annotations:2.1.0'
 
-        annotationProcessor 'systems.manifold:manifold-preprocessor:2024.1.37'
+        annotationProcessor 'systems.manifold:manifold-preprocessor:2025.1.5'
     }
 
     processResources {
