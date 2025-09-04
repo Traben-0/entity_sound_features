@@ -13,3 +13,9 @@
 /.idea/
 /.architectury-transformer/
 /build.properties
+
+jars/*
+versions/*/api/
+versions/*/build/
+versions/*/.gradle/
+versions/*/run/
