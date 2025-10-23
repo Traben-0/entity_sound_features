@@ -60,7 +60,13 @@ public class ESFInit implements ClientModInitializer {
 //$$ @net.neoforged.fml.common.Mod("entity_sound_features")
 //$$ public class ESFInit {
 //$$     public ESFInit() {
-//$$        if (FMLEnvironment.dist.isClient()) {
+//$$        if (FMLEnvironment.
+                    //#if MC >= 12109
+                    //$$ getDist()
+                    //#else
+                    //$$ dist
+                    //#endif
+//$$                    .isClient()) {
 //$$            try {
 //$$                ModLoadingContext.get().registerExtensionPoint(
                         //#if MC >= 12100
