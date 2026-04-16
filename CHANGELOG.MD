@@ -1,4 +1,12 @@
-0.4
+
+
+[0.8]
+- updated to support ETF 7.1 & EMF 3.1
+- updated to 26.1+
+- fixed several NullPointerException crashes
+
+
+[0.4]
 
 added extra sound related utilities to be used with ETF and EMF, documentation and examples on GitHub
 
