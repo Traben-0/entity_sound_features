@@ -1,6 +1,5 @@
 package traben.entity_sound_features.properties;
 
-import it.unimi.dsi.fastutil.objects.ObjectOpenHashSet;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.sounds.SoundEngine;
 import org.jetbrains.annotations.NotNull;
@@ -11,6 +10,7 @@ import traben.entity_texture_features.features.property_reading.properties.gener
 import traben.entity_texture_features.features.state.ETFEntityRenderState;
 import traben.entity_texture_features.utils.ETFEntity;
 
+import java.util.HashSet;
 import java.util.Properties;
 import java.util.Set;
 
@@ -53,15 +53,27 @@ public class PlayingSoundProperty extends StringArrayOrRegexProperty {
         var engine = Minecraft.getInstance().getSoundManager().soundEngine;
         if (!engine.loaded) return null;
 
-        Set<String> sounds = new ObjectOpenHashSet<>();
+        Set<String> sounds = new HashSet<>();
         for(var sound : engine.soundDeleteTime.entrySet()) {
             if (sound.getValue() > engine.tickCount) {
                 continue;
             }
-            sounds.add(sound.getKey().getLocation().toString().replaceFirst("minecraft:", ""));
+            sounds.add(sound.getKey()
+                    //#if MC >= 26.1
+                    //$$ .getIdentifier()
+                    //#else
+                    .getLocation()
+                    //#endif
+                    .toString().replaceFirst("minecraft:", ""));
         }
         for(var sound : engine.instanceToChannel.keySet()) {
-            sounds.add(sound.getLocation().toString().replaceFirst("minecraft:", ""));
+            sounds.add(sound
+                    //#if MC >= 26.1
+                    //$$ .getIdentifier()
+                    //#else
+                    .getLocation()
+                    //#endif
+                    .toString().replaceFirst("minecraft:", ""));
         }
         return sounds.isEmpty() ? null : sounds;
     }

@@ -26,7 +26,7 @@ public class SoundRuleIndexProperty extends SimpleIntegerArrayProperty {
     }
 
     protected int getValueFromEntity(ETFEntityRenderState entity) {
-        int val = ESFSoundContext.lastRuleMet.getInt(entity.uuid());
+        int val = ESFSoundContext.lastRuleMet.get(entity.uuid());
         return Math.max(val, 0);
     }
 }

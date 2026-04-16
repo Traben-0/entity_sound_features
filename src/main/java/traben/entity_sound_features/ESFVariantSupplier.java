@@ -1,7 +1,6 @@
 package traben.entity_sound_features;
 
 import com.google.gson.reflect.TypeToken;
-import it.unimi.dsi.fastutil.ints.Int2ObjectArrayMap;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.resources.sounds.Sound;
 import net.minecraft.client.resources.sounds.SoundEventRegistration;
@@ -9,7 +8,6 @@ import net.minecraft.client.sounds.SoundEngine;
 import net.minecraft.client.sounds.SoundManager;
 import net.minecraft.client.sounds.WeighedSoundEvents;
 import net.minecraft.client.sounds.Weighted;
-import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.packs.resources.Resource;
 import net.minecraft.util.GsonHelper;
 import net.minecraft.util.RandomSource;
@@ -21,6 +19,8 @@ import traben.entity_texture_features.features.property_reading.PropertiesRandom
 import traben.entity_texture_features.features.state.ETFEntityRenderState;
 import traben.entity_texture_features.utils.ETFEntity;
 
+import java.util.HashMap;
+import java.util.Map;
 import java.util.Objects;
 import java.util.Optional;
 
@@ -31,11 +31,23 @@ public class ESFVariantSupplier {
    // private static final Gson GSON = (new GsonBuilder()).registerTypeHierarchyAdapter(Component.class, new Component.SerializerAdapter()).registerTypeAdapter(SoundEventRegistration.class, new SoundEventRegistrationSerializer()).create();
     private final RandomSource random = RandomSource.create();
     //private static final Random random = new Random();
-    protected Int2ObjectArrayMap<WeighedSoundEvents> variantSounds;
+    protected Map<Integer, WeighedSoundEvents> variantSounds;
     protected ETFApi.ETFVariantSuffixProvider variator;
-    protected ResourceLocation location;
+    protected
+        //#if MC >= 26.1
+        //$$ net.minecraft.resources.Identifier
+        //#else
+        net.minecraft.resources.ResourceLocation
+        //#endif
+            location;
 
-    protected ESFVariantSupplier(ResourceLocation location, ETFApi.ETFVariantSuffixProvider variator, Int2ObjectArrayMap<WeighedSoundEvents> variantSounds) {
+    protected ESFVariantSupplier(
+            //#if MC >= 26.1
+            //$$ net.minecraft.resources.Identifier location,
+            //#else
+            net.minecraft.resources.ResourceLocation location,
+            //#endif
+                                 ETFApi.ETFVariantSuffixProvider variator, Map<Integer, WeighedSoundEvents> variantSounds) {
         if (variantSounds.isEmpty())
             throw new IllegalArgumentException("ESFVariantSupplier: Variant sounds cannot be empty");
 
@@ -50,7 +62,7 @@ public class ESFVariantSupplier {
             propeties.setOnMeetsRuleHook((entity, rule) -> {
                 if (rule == null) {
 //                    System.out.println("Rule met: null for " + entity.etf$getType() + ": " + entity.etf$getUuid());
-                    ESFSoundContext.lastRuleMet.removeInt(entity.uuid());
+                    ESFSoundContext.lastRuleMet.remove(entity.uuid());
                 } else {
 //                    System.out.println("Rule met: " + rule.RULE_NUMBER + " for " + entity.etf$getType() + ": " + entity.etf$getUuid());
                     ESFSoundContext.lastRuleMet.put(entity.uuid(), rule.ruleNumber);
@@ -61,16 +73,29 @@ public class ESFVariantSupplier {
     }
 
     @Nullable
-    public static ESFVariantSupplier getOrNull(final ResourceLocation soundEventResource) {
+    public static ESFVariantSupplier getOrNull(
+            //#if MC >= 26.1
+            //$$ net.minecraft.resources.Identifier soundEventResource
+            //#else
+            net.minecraft.resources.ResourceLocation soundEventResource
+            //#endif
+    ) {
+        if (soundEventResource == null) return null;
         boolean log = ESF.config().getConfig().logSoundSetup;
         try {
             String propertiesPath = soundEventResource.getNamespace() + ":esf/" + soundEventResource.getPath().replaceAll("\\.", "/") + ".properties";
             //#if MC >= 12100
-            if (ResourceLocation.tryParse(propertiesPath) != null) {
+            if (
+                //#if MC >= 26.1
+                //$$ net.minecraft.resources.Identifier
+                //#else
+                net.minecraft.resources.ResourceLocation
+                //#endif
+                    .tryParse(propertiesPath) != null) {
             //#else
             //$$ if (ResourceLocation.isValidResourceLocation(propertiesPath)) {
             //#endif
-                ResourceLocation properties = ESF.res(propertiesPath);
+                var properties = ESF.res(propertiesPath);
                 var variator = ETFApi.getVariantSupplierOrNull(properties,
                         ESF.res(propertiesPath.replaceAll("\\.properties$", ".json")), "sounds", "sound");
                 if (variator != null) {
@@ -80,7 +105,7 @@ public class ESFVariantSupplier {
                     suffixes.removeIf((k) -> k == 1);
                     suffixes.removeIf((k) -> k == 0);
                     if (!suffixes.isEmpty()) {
-                        var variantSounds = new Int2ObjectArrayMap<WeighedSoundEvents>();
+                        var variantSounds = new HashMap<Integer, WeighedSoundEvents>();
                         String soundPrefix = propertiesPath.replaceAll("\\.properties$", "");
 
                         for (int suffix : suffixes) {
@@ -91,7 +116,7 @@ public class ESFVariantSupplier {
                                 //variantSounds.put(suffix, new ESFSound(soundLocation));
                                 parseSoundEventVariant(soundLocation, soundResource.get(), variantSounds, suffix);
                             } else {
-                                ResourceLocation ogg = ESF.res(soundLocation.getNamespace(),
+                                var ogg = ESF.res(soundLocation.getNamespace(),
                                         soundLocation.getPath().replaceAll("\\.json$", ".ogg"));
                                 //try replace json file with direct .ogg
                                 if (Minecraft.getInstance().getResourceManager().getResource(ogg).isPresent()) {
@@ -108,25 +133,31 @@ public class ESFVariantSupplier {
                     }
                 }
             } else {
-                ESF.logWarn(propertiesPath + " was invalid sound properties id");
+                if (log) ESF.logWarn(propertiesPath + " was invalid sound properties id");
             }
         } catch (Exception e) {
-            ESF.logError(e.getMessage());
+            if (log) ESF.logError(e.getMessage());
         }
         return null;
     }
 
-    private static void parseSoundEventVariant(ResourceLocation soundJson, Resource jsonResource, Int2ObjectArrayMap<WeighedSoundEvents> soundMap, int suffix) {
+    private static void parseSoundEventVariant(
+            //#if MC >= 26.1
+            //$$ net.minecraft.resources.Identifier soundJson,
+            //#else
+            net.minecraft.resources.ResourceLocation soundJson,
+            //#endif
+                                               Resource jsonResource, Map<Integer, WeighedSoundEvents> soundMap, int suffix) {
         try {
             SoundEventRegistration map = GsonHelper.fromJson(SoundManager.GSON, jsonResource.openAsReader(), SOUND_EVENT_REGISTRATION_TYPE);
             var weighedSoundEvents = new WeighedSoundEvents(null, map.getSubtitle());
             for (Sound sound : map.getSounds()) {
-                final ResourceLocation resourceLocation2 = sound.getLocation();
+                var resourceLocation2 = sound.getLocation();
                 Object weighted;
                 switch (sound.getType()) {
                     case FILE:
                         //try ogg in esf directory first
-                        ResourceLocation ogg = ESF.res(soundJson.getNamespace(),
+                        var ogg = ESF.res(soundJson.getNamespace(),
                                 "esf/" + sound.getLocation().getPath() + ".ogg");
                         if (Minecraft.getInstance().getResourceManager().getResource(ogg).isPresent()) {
                             //esf folder sound
@@ -193,7 +224,7 @@ public class ESFVariantSupplier {
             if (vary > 0) {
                 ESFSoundContext.lastSuffix.put(ESFSoundContext.entitySource.uuid(), vary);
             } else {
-                ESFSoundContext.lastSuffix.removeInt(ESFSoundContext.entitySource.uuid());
+                ESFSoundContext.lastSuffix.remove(ESFSoundContext.entitySource.uuid());
             }
         }
 

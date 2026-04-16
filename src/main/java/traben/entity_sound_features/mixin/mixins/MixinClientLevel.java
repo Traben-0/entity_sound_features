@@ -59,7 +59,7 @@ public abstract class MixinClientLevel extends Level {
             if(ESFSoundContext.entitySource == null)
                 ESFSoundContext.searchForBlockEntity(this, x, y, z);
         }
-        if (ESF.config().getConfig().announceCompatibleSounds.all()) {
+        if (ESF.config().getConfig().announceCompatibleSounds.all() && ESFSoundContext.entitySource != null) {
             ESF.log("found entity at " + ESFSoundContext.entitySource.blockPos().toShortString() + ", for sound at " + x + ", " + y + ", " + z);
         }
     }

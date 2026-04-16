@@ -2,7 +2,6 @@ package traben.entity_sound_features.mixin.mixins;
 
 import net.minecraft.client.resources.sounds.Sound;
 import net.minecraft.client.sounds.WeighedSoundEvents;
-import net.minecraft.resources.ResourceLocation;
 import net.minecraft.util.RandomSource;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Unique;
@@ -22,12 +21,22 @@ public abstract class MixinWeighedSoundEvents {
     @Unique
     private ESFVariantSupplier esf$variator = null;
 
-    @Unique
-    private ResourceLocation esf$resourceLocation = null;
+    //#if MC >= 26.1
+    //$$ @Unique private net.minecraft.resources.Identifier esf$resourceLocation = null;
+    //#else
+    @Unique private net.minecraft.resources.ResourceLocation esf$resourceLocation = null;
+    //#endif
+
 
 
     @Inject(method = "<init>", at = @At(value = "TAIL"))
-    private void esf$init(final ResourceLocation resourceLocation, final String string, final CallbackInfo ci) {
+    private void esf$init(
+            //#if MC >= 26.1
+            //$$ net.minecraft.resources.Identifier resourceLocation,
+            //#else
+            net.minecraft.resources.ResourceLocation resourceLocation,
+            //#endif
+                          final String string, final CallbackInfo ci) {
         esf$resourceLocation = resourceLocation;
         esf$variator = ESFVariantSupplier.getOrNull(resourceLocation);
 //        if (esf$variator != null) ESFSoundContext.registerVariantSupplier(esf$variator);

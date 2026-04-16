@@ -2,7 +2,6 @@ package traben.entity_sound_features;
 
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.screens.Screen;
-import net.minecraft.resources.ResourceLocation;
 import org.jetbrains.annotations.NotNull;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -19,9 +18,14 @@ import traben.entity_texture_features.utils.ETFUtils2;
 import traben.tconfig.TConfigHandler;
 
 public class ESF {
-
-    public static @NotNull ResourceLocation res(String fullPath) { return ETFUtils2.res(fullPath); }
-    public static @NotNull ResourceLocation res(String namespace, String path) { return ETFUtils2.res(namespace, path); }
+    
+    //#if MC >= 26.1
+    //$$ public static @NotNull net.minecraft.resources.Identifier res(String fullPath) { return ETFUtils2.res(fullPath); }
+    //$$ public static @NotNull net.minecraft.resources.Identifier res(String namespace, String path) { return ETFUtils2.res(namespace, path); }
+    //#else
+    public static @NotNull net.minecraft.resources.ResourceLocation res(String fullPath) { return ETFUtils2.res(fullPath); }
+    public static @NotNull net.minecraft.resources.ResourceLocation res(String namespace, String path) { return ETFUtils2.res(namespace, path); }
+    //#endif
 
     public static final String MOD_ID = "entity_sound_features";
 
@@ -31,15 +35,16 @@ public class ESF {
 
     public static TConfigHandler<ESFConfig> config() {
         if (configHandler == null) {
-            configHandler = new TConfigHandler<>(ESFConfig::new, MOD_ID, "ESF");
-            ETF.registerConfigHandler(configHandler);
+            configHandler = new TConfigHandler<>(ESFConfig::new, MOD_ID, "ESF_load");
         }
         return configHandler;
     }
 
     public static void init() {
         LOGGER.info("[ESF (Entity Sound Features)] initialized.");
-        config();
+
+        configHandler = new TConfigHandler<>(ESFConfig::new, MOD_ID, "ESF");
+        ETF.registerConfigHandler(configHandler);
 
         ETFApi.registerCustomRandomPropertyFactory(MOD_ID,
                 RandomProperties.RandomPropertyFactory.of("soundRule",

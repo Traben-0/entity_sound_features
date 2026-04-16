@@ -27,7 +27,7 @@ public class SoundSuffixProperty extends SimpleIntegerArrayProperty {
     }
 
     protected int getValueFromEntity(ETFEntityRenderState entity) {
-        int val = ESFSoundContext.lastSuffix.getInt(entity.uuid());
+        int val = ESFSoundContext.lastSuffix.get(entity.uuid());
         return Math.max(val, 0);
     }
 }

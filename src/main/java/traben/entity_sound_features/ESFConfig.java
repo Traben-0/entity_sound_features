@@ -1,12 +1,10 @@
 package traben.entity_sound_features;
 
 import com.demonwav.mcdev.annotations.Translatable;
-import it.unimi.dsi.fastutil.objects.ObjectOpenHashSet;
 import net.minecraft.client.renderer.blockentity.BlockEntityRenderers;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.network.chat.CommonComponents;
 import net.minecraft.network.chat.Component;
-import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.EntityType;
 import traben.entity_texture_features.ETFApi;
 import traben.entity_texture_features.utils.ETFEntity;
@@ -15,6 +13,9 @@ import traben.tconfig.gui.entries.TConfigEntryBoolean;
 import traben.tconfig.gui.entries.TConfigEntryCategory;
 import traben.tconfig.gui.entries.TConfigEntryEnumButton;
 import traben.tconfig.gui.entries.TConfigEntryEnumSlider;
+
+import java.util.HashSet;
+import java.util.Set;
 
 public class ESFConfig extends TConfig {
 
@@ -26,7 +27,7 @@ public class ESFConfig extends TConfig {
     public AnnounceMode announceCompatibleSounds = AnnounceMode.NONE;
 
 
-    public ObjectOpenHashSet<String> entityDisableSounds = new ObjectOpenHashSet<>();
+    public Set<String> entityDisableSounds = new HashSet<>();
 
 
     public boolean isEntityAllowedToModifySounds(ETFEntity entity){
@@ -99,7 +100,11 @@ public class ESFConfig extends TConfig {
 
 
     @Override
-    public ResourceLocation getModIcon() {
+    //#if MC >= 26.1
+    //$$ public net.minecraft.resources.Identifier getModIcon() {
+    //#else
+    public net.minecraft.resources.ResourceLocation getModIcon() {
+    //#endif
         return ESF.res(ESF.MOD_ID, "textures/gui/esf_mini.png");
     }
 

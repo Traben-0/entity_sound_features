@@ -1,0 +1,180 @@
+{
+    "id": "entity_sound_features",
+    "curseforge": "1060324",
+    "modrinth": "IMuO8COj",
+    "files": [
+        {
+            "loaders": [
+                "Forge"
+            ],
+            "versions": [
+                "1.21",
+                "1.21.1"
+            ]
+        },
+        {
+            "loaders": [
+                "NeoForge"
+            ],
+            "versions": [
+                "1.21",
+                "1.21.1"
+            ]
+        },
+        {
+            "loaders": [
+                "Fabric",
+                "Quilt"
+            ],
+            "versions": [
+                "1.21",
+                "1.21.1"
+            ]
+        },
+        {
+            "loaders": [
+                "Forge"
+            ],
+            "versions": [
+                "1.21.3",
+                "1.21.2"
+            ]
+        },
+        {
+            "loaders": [
+                "NeoForge"
+            ],
+            "versions": [
+                "1.21.3",
+                "1.21.2"
+            ]
+        },
+        {
+            "loaders": [
+                "Fabric",
+                "Quilt"
+            ],
+            "versions": [
+                "1.21.3",
+                "1.21.2"
+            ]
+        },
+        {
+            "loaders": [
+                "Forge"
+            ],
+            "versions": [
+                "1.21.4"
+            ]
+        },
+        {
+            "loaders": [
+                "NeoForge"
+            ],
+            "versions": [
+                "1.21.4"
+            ]
+        },
+        {
+            "loaders": [
+                "Fabric",
+                "Quilt"
+            ],
+            "versions": [
+                "1.21.4"
+            ]
+        },
+        {
+            "loaders": [
+                "Forge"
+            ],
+            "versions": [
+                "1.21.5"
+            ]
+        },
+        {
+            "loaders": [
+                "NeoForge"
+            ],
+            "versions": [
+                "1.21.5"
+            ]
+        },
+        {
+            "loaders": [
+                "Fabric",
+                "Quilt"
+            ],
+            "versions": [
+                "1.21.5"
+            ]
+        },
+        {
+            "loaders": [
+                "Forge"
+            ],
+            "versions": [
+                "1.21.6",
+                "1.21.7",
+                "1.21.8"
+            ]
+        },
+        {
+            "loaders": [
+                "NeoForge"
+            ],
+            "versions": [
+                "1.21.6",
+                "1.21.7",
+                "1.21.8"
+            ]
+        },
+        {
+            "loaders": [
+                "Fabric",
+                "Quilt"
+            ],
+            "versions": [
+                "1.21.6",
+                "1.21.7",
+                "1.21.8"
+            ]
+        },
+        {
+            "loaders": [
+                "Forge"
+            ],
+            "versions": [
+                "1.21.9",
+                "1.21.10",
+                "1.21.11"
+            ]
+        },
+        {
+            "loaders": [
+                "NeoForge"
+            ],
+            "versions": [
+                "1.21.9",
+                "1.21.10",
+                "1.21.11"
+            ]
+        },
+        {
+            "loaders": [
+                "Fabric",
+                "Quilt"
+            ],
+            "versions": [
+                "1.21.9",
+                "1.21.10",
+                "1.21.11"
+            ]
+        },
+
+        {"loaders": ["NeoForge"],
+            "versions": ["26.1", "26.1.1", "26.1.2"]},
+        {"loaders": ["Fabric", "Quilt"],
+            "versions": ["26.1", "26.1.1", "26.1.2"]}
+    ]
+}

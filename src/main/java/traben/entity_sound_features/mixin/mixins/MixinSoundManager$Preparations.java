@@ -2,7 +2,6 @@ package traben.entity_sound_features.mixin.mixins;
 
 import net.minecraft.client.sounds.SoundManager;
 import net.minecraft.resources.FileToIdConverter;
-import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.packs.resources.Resource;
 import net.minecraft.server.packs.resources.ResourceManager;
 import org.spongepowered.asm.mixin.Mixin;
@@ -15,8 +14,11 @@ import java.util.Map;
 
 @Mixin(SoundManager.Preparations.class)
 public abstract class MixinSoundManager$Preparations {
-    @Shadow
-    public Map<ResourceLocation, Resource> soundCache;
+    //#if MC >= 26.1
+    //$$ @Shadow public Map<net.minecraft.resources.Identifier, Resource> soundCache;
+    //#else
+    @Shadow public Map<net.minecraft.resources.ResourceLocation, Resource> soundCache;
+    //#endif
 
     @Inject(method = "listResources", at = @At(value = "TAIL"))
     private void esf$addESFDirectorySounds(final ResourceManager resourceManager, final CallbackInfo ci) {

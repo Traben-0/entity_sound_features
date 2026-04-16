@@ -36,7 +36,12 @@ public class ESFIsPlayingSoundMethodFactory extends MathMethod {
                     if (sound.getValue() > engine.tickCount) {
                         continue;
                     }
-                    var res = sound.getKey().getLocation();
+                    var res = sound.getKey()
+                            //#if MC >= 26.1
+                            //$$ .getIdentifier();
+                            //#else
+                            .getLocation();
+                            //#endif
                     if (res.equals(test)) {
                         found = true;
                         break;
@@ -44,7 +49,12 @@ public class ESFIsPlayingSoundMethodFactory extends MathMethod {
                 }
                 if (!found) {
                     for (SoundInstance sound : engine.instanceToChannel.keySet()) {
-                        var res = sound.getLocation();
+                        var res = sound
+                                //#if MC >= 26.1
+                                //$$ .getIdentifier();
+                                //#else
+                                .getLocation();
+                                //#endif
                         if (res.equals(test)) {
                             found = true;
                             break;

@@ -1,36 +1,49 @@
 package traben.entity_sound_features;
 
-import it.unimi.dsi.fastutil.objects.ObjectOpenHashSet;
 import net.minecraft.client.Minecraft;
 //#if MC >= 12102
 import net.minecraft.client.renderer.entity.state.EntityRenderState;
 //#endif
 import net.minecraft.core.BlockPos;
-import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.phys.Vec3;
+import org.jetbrains.annotations.Nullable;
 import traben.entity_texture_features.ETF;
 import traben.entity_texture_features.features.state.ETFEntityRenderState;
 import traben.entity_texture_features.utils.ETFEntity;
-import traben.entity_texture_features.utils.EntityIntLRU;
+import traben.entity_texture_features.utils.ETFLruCache;
 
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 public class ESFSoundContext {
 
     private static final List<ESFVariantSupplier> variantSuppliers = new ArrayList<>();
-    private static final ObjectOpenHashSet<ResourceLocation> announcedSounds = new ObjectOpenHashSet<>();
-    private static final ObjectOpenHashSet<ResourceLocation> knownESFSounds = new ObjectOpenHashSet<>();
-    public static void addKnownESFSound(ResourceLocation sound){
+    //#if MC >= 26.1
+    //$$ private static final Set<net.minecraft.resources.Identifier> announcedSounds = new HashSet<>();
+    //$$ private static final Set<net.minecraft.resources.Identifier> knownESFSounds = new HashSet<>();
+    //$$ public static void addKnownESFSound(net.minecraft.resources.Identifier sound){
+    //$$     knownESFSounds.add(sound);
+    //$$ }
+    //$$ public static boolean shouldCaptureEntity(net.minecraft.resources.Identifier sound){
+    //$$     if(ESF.config().getConfig().announceCompatibleSounds.all()) return true;
+    //$$     return knownESFSounds.contains(sound);
+    //$$ }
+    //#else
+    private static final Set<net.minecraft.resources.ResourceLocation> announcedSounds = new HashSet<>();
+    private static final Set<net.minecraft.resources.ResourceLocation> knownESFSounds = new HashSet<>();
+    public static void addKnownESFSound(net.minecraft.resources.ResourceLocation sound){
         knownESFSounds.add(sound);
     }
-    public static boolean shouldCaptureEntity(ResourceLocation sound){
+    public static boolean shouldCaptureEntity(net.minecraft.resources.ResourceLocation sound){
         if(ESF.config().getConfig().announceCompatibleSounds.all()) return true;
         return knownESFSounds.contains(sound);
     }
-    public static ETFEntityRenderState entitySource = null;
+    //#endif
+    public static @Nullable ETFEntityRenderState entitySource = null;
 
     public static void setSource(ETFEntity entity) {
         entitySource = ETFEntityRenderState.forEntity(entity);
@@ -50,7 +63,13 @@ public class ESFSoundContext {
         }
     }
 
-    public static void announceSound(ResourceLocation sound, boolean wasESF) {
+    public static void announceSound(
+            //#if MC >= 26.1
+            //$$ net.minecraft.resources.Identifier sound,
+            //#else
+            net.minecraft.resources.ResourceLocation sound,
+            //#endif
+                                     boolean wasESF) {
         if (entitySource == null || sound == null) return;
 
         switch (ESF.config().getConfig().announceCompatibleSounds) {
@@ -67,11 +86,17 @@ public class ESFSoundContext {
         }
     }
 
-    private static void announceWithEntity(ResourceLocation sound, boolean wasESF) {
+    private static void announceWithEntity(
+            //#if MC >= 26.1
+            //$$ net.minecraft.resources.Identifier sound,
+            //#else
+            net.minecraft.resources.ResourceLocation sound,
+            //#endif
+                                           boolean wasESF) {
         String pre;
         if (wasESF) pre = ("Modifiable sound event with ESF properties: " + sound);
         else pre = ("Modifiable sound event: " + sound);
-        ESF.log(pre + ", played by: " + entitySource.entityType());
+        if (entitySource != null) ESF.log(pre + ", played by: " + entitySource.entityType());
 
         if (!wasESF)
             ESF.log("This sound event can be modified by ESF with a properties file at: assets/" + sound.getNamespace() + "/esf/" + sound.getPath().replaceAll("\\.", "/") + ".properties");
@@ -85,8 +110,8 @@ public class ESFSoundContext {
         lastSuffix.clear();
     }
 
-    public static final EntityIntLRU lastRuleMet = new EntityIntLRU();
-    public static final EntityIntLRU lastSuffix = new EntityIntLRU();
+    public static final ETFLruCache.UUIDInteger lastRuleMet = new ETFLruCache.UUIDInteger();
+    public static final ETFLruCache.UUIDInteger lastSuffix = new ETFLruCache.UUIDInteger();
 
 
     public static void searchForEntity(Iterable<Entity> entities, double x, double y, double z) {
