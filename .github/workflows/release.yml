@@ -52,6 +52,9 @@ jobs:
       - name: print discord notification json to be verified before final upload (build will take a while)
         run: cat discord_update.json
 
+      - name: Make Gradle Wrapper executable
+        run: chmod +x ./gradlew
+
       # Build the mod
       - run: ./gradlew build
 
