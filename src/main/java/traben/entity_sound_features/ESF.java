@@ -5,9 +5,7 @@ import net.minecraft.client.gui.screens.Screen;
 import org.jetbrains.annotations.NotNull;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import traben.entity_model_features.EMFAnimationApi;
-import traben.entity_sound_features.methods.ESFIsPlayingSoundMethodFactory;
-import traben.entity_sound_features.methods.ESFPlaySoundMethodFactory;
+import traben.entity_sound_features.methods.ESFMethods;
 import traben.entity_sound_features.properties.PlayingSoundProperty;
 import traben.entity_sound_features.properties.SoundRuleIndexProperty;
 import traben.entity_sound_features.properties.SoundSuffixProperty;
@@ -58,14 +56,7 @@ public class ESF {
                         PlayingSoundProperty::getPropertyOrNull)
                 );
 
-        EMFAnimationApi.registerCustomFunctionFactory(
-                MOD_ID,"playsound",
-                "entity_sound_features.config.playsound.method",
-                ESFPlaySoundMethodFactory::new);
-        EMFAnimationApi.registerCustomFunctionFactory(
-                MOD_ID,"playingsound",
-                "entity_sound_features.config.playingsound.method",
-                ESFIsPlayingSoundMethodFactory::new);
+        ESFMethods.register();
 
     }
 

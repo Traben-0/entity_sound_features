@@ -77,7 +77,7 @@ side = "CLIENT"
 [[dependencies.entity_sound_features]]
 modId = "entity_model_features"
 mandatory = true
-versionRange = "[3.0,)"
+versionRange = "[3.2,)"
 ordering = "NONE"
 side = "CLIENT"
 

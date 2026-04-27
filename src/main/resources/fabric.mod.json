@@ -37,7 +37,7 @@
     "fabricloader": "*",
     "minecraft": "*",
     "entity_texture_features": ">=7.1",
-    "entity_model_features": ">=3.1"
+    "entity_model_features": ">=3.2"
   },
   "custom": {
     "modmenu": {
