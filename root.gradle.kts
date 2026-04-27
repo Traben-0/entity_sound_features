@@ -61,6 +61,7 @@ preprocess {
         .connectToVersion(12100)
 //        .connectToVersion(12006)
 //        .connectToVersion(12004)
+        .connectToVersion(12001, neoforge = false)
 
     // And then you need to tell the preprocessor which versions it should directly convert between.
     // This should form a directed graph with no cycles (i.e. a tree), which the preprocessor will then traverse to

@@ -46,6 +46,7 @@ mutableListOf<String>()
         .version(12100)
 //        .version(12006)
 //        .version(12004)
+        .version(12001, neoforge = false)
         .forEach { version ->
             println("including version: $version") // debug print
             include(":$version")

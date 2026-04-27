@@ -93,7 +93,7 @@ public class ESFVariantSupplier {
                 //#endif
                     .tryParse(propertiesPath) != null) {
             //#else
-            //$$ if (ResourceLocation.isValidResourceLocation(propertiesPath)) {
+            //$$ if (net.minecraft.resources.ResourceLocation.isValidResourceLocation(propertiesPath)) {
             //#endif
                 var properties = ESF.res(propertiesPath);
                 var variator = ETFApi.getVariantSupplierOrNull(properties,

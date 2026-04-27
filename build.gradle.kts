@@ -51,6 +51,7 @@ val accessWidener = "entity_sound_features_" + when {
     mcVersion >= 12100 -> 7
     mcVersion >= 12006 -> 6
     mcVersion >= 12004 -> 5
+    mcVersion >= 12001 -> 4
     else -> throw IllegalStateException("Unsupported version: $mcVersion")
 } + ".accesswidener"
 

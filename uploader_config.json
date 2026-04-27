@@ -3,6 +3,11 @@
     "curseforge": "1060324",
     "modrinth": "IMuO8COj",
     "files": [
+        {"loaders": ["Forge"],
+            "versions": ["1.20.1", "1.20"]},
+        {"loaders": ["Fabric", "Quilt"],
+            "versions": ["1.20.1", "1.20"]},
+
         {
             "loaders": [
                 "Forge"
