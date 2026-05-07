@@ -284,7 +284,6 @@ private fun changelog(): String {
 }
 
 publishMods {
-    dryRun.set(true)
     // https://modmuss50.github.io/mod-publish-plugin/
     file.set(
         (if (platform.isUnobfuscated) tasks.jar
