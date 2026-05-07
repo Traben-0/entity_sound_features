@@ -316,7 +316,6 @@ publishMods {
         projectId.set("1060324")
         accessToken.set(providers.environmentVariable("CURSEFORGE_TOKEN"))
         minecraftVersions.addAll(*platform.mcVersionStr.versionRange)
-        requires("entitytexturefeatures", "entity-model-features")
         clientRequired.set(true)
     }
     modrinth {
