@@ -2,7 +2,7 @@
 
 [0.8.1]
 - updated to support EMF 3.2+
-  - removed the 3 parameter option from the `playsound()` animation function 
+- removed the 3 parameter option from the `playsound()` animation function 
 - readded 1.20.1 support
 
 [0.8]
