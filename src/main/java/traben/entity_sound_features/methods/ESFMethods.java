@@ -7,8 +7,8 @@ import net.minecraft.sounds.SoundSource;
 import net.minecraft.util.Mth;
 import net.minecraft.world.entity.Entity;
 import traben.entity_model_features.EMFAnimationApi;
-import traben.entity_model_features.models.animation.EMFAnimationEntityContext;
 import traben.entity_model_features.models.animation.math.asm.ASMHelper;
+import traben.entity_model_features.models.animation.state.EMFState;
 import traben.entity_sound_features.ESF;
 
 import java.util.HashMap;
@@ -99,8 +99,11 @@ public abstract class ESFMethods {
         if (!trueForSound) return false;
 
         // check entity
-        var emfEntity = EMFAnimationEntityContext.getEMFEntity();
-        if (emfEntity == null || emfEntity.etf$getWorld() == null) return false;
+        var state = EMFState.state();
+        if (state == null) return false;
+        var emfEntity = state.emfEntity();
+        var world = state.world();
+        if (emfEntity == null || world == null) return false;
 
         // sound event
         if (soundId == null || soundId.isBlank()) {
@@ -109,7 +112,7 @@ public abstract class ESFMethods {
         }
 
         // check delay
-        var currentTick = emfEntity.etf$getWorld().getGameTime();
+        var currentTick = world.getGameTime();
         Long lastTick = lastSoundTicks.getOrDefault(soundId, 0L);
         if (lastTick + (delay < 1 ? 1 : delay) > currentTick) return false;
         lastSoundTicks.put(soundId, currentTick);
@@ -124,7 +127,7 @@ public abstract class ESFMethods {
         // event is valid sound event from here
 
         try {
-            emfEntity.etf$getWorld().playSound(Minecraft.getInstance().player, emfEntity.etf$getBlockPos(),
+            world.playSound(Minecraft.getInstance().player, state.blockPos(),
                     SoundEvent.createFixedRangeEvent(res, Mth.clamp( range, 0, 128)),
                     emfEntity instanceof Entity entity ? entity.getSoundSource() : SoundSource.BLOCKS,
                     Mth.clamp( volume, 0, 1), Mth.clamp(pitch, 0.5F, 2.0F));

@@ -63,7 +63,7 @@ ___
 ESF adds these animation functions to be used in EMF custom model animations.
 
 #### playsound(...)  v0.4+
-`playsound(id, cond, x, y, z, a)` or `playsound(id, cond, x)`
+`playsound(id, cond, x, y, z, a)`
 Is a boolean function that will trigger the given sound event to play.
 Returns true if the sound was triggered or false otherwise.
 
@@ -72,9 +72,9 @@ It can have either 3 or 6 arguments depending on your needs
 Modded sound events should include the mods namespace but vanilla sound events will not include the minecraft: namespace.
 cond= boolean condition that must be true to trigger the sound
 - x = minimum delay between sound plays in game ticks, minimum of 1
-- y = (optional) volume 0-1, default is 1.0
-- z = (optional) pitch 0.5-2, default is 1.0
-- a = (optional) distance 0-128 the distance the sound can be heard from, default is 16
+- y = (optional) volume 0-1
+- z = (optional) pitch 0.5-2
+- a = (optional) distance 0-128 the distance the sound can be heard from
 
 This function has a very simple limitation, it will only trigger the sound when the animations play. 
 This may seem obvious, but you may not expect the end result of this limitation, such as mobs making constant short noises
