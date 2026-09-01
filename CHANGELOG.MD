@@ -1,4 +1,8 @@
 
+[0.8.2]
+- updated to support EMF 3.3+ and ETF 7.2+
+- fixed a 26.2 menu crash
+- fixed the playsound function breaking with EMF
 
 [0.8.1]
 - updated to support EMF 3.2+

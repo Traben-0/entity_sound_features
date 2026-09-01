@@ -8,6 +8,7 @@ import net.minecraft.network.chat.Component;
 import net.minecraft.world.entity.EntityType;
 import traben.entity_texture_features.ETFApi;
 import traben.entity_texture_features.utils.ETFEntity;
+import traben.entity_texture_features.utils.UEntityTypes;
 import traben.tconfig.TConfig;
 import traben.tconfig.gui.entries.TConfigEntryBoolean;
 import traben.tconfig.gui.entries.TConfigEntryCategory;
@@ -61,7 +62,7 @@ public class ESFConfig extends TConfig {
 
         try {
             BuiltInRegistries.ENTITY_TYPE.forEach((entityType) -> {
-                if (entityType != EntityType.PLAYER) {
+                if (entityType != UEntityTypes.PLAYER) {
                     String translationKey = entityType.getDescriptionId();
                     TConfigEntryCategory entityCategory = new TConfigEntryCategory(translationKey);
                     addEntitySettings(entityCategory, translationKey);
