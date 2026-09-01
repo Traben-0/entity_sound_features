@@ -36,8 +36,8 @@
   "depends": {
     "fabricloader": "*",
     "minecraft": "*",
-    "entity_texture_features": ">=7.1",
-    "entity_model_features": ">=3.2"
+    "entity_texture_features": ">=7.2",
+    "entity_model_features": ">=3.3"
   },
   "custom": {
     "modmenu": {
