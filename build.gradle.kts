@@ -243,7 +243,7 @@ tasks.register<Copy>("buildBulkJars") {
 }
 
 private val versionRangeMap: Map<String, Array<String>> = mapOf(
-    "26.1"   to arrayOf("26.1", "26.1.1", "26.1.2"),
+    "26.1"   to arrayOf("26.1", "26.1.1", "26.1.2", "26.2"), // ESF doesn't yet need 26.2 specific code
     "1.21.9" to arrayOf("1.21.9", "1.21.10", "1.21.11"),
     "1.21.6" to arrayOf("1.21.6", "1.21.7", "1.21.8"),
     "1.21.3" to arrayOf("1.21.3", "1.21.2"),
